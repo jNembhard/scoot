@@ -1,8 +1,14 @@
 import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
+import Footer from "../molecules/Footer";
+import Header from "../molecules/Header";
 
-function Layout() {
-  return <div></div>;
+export default function Layout({ children }) {
+  return (
+    <div>
+      <Header />
+      {children}
+      <Footer />
+    </div>
+  );
 }
-
-export default Layout;

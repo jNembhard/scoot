@@ -1,28 +1,34 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import BurgerNav from "../atoms/BurgerNav";
+import styled from "styled-components";
 
-function Header() {
+export default function Header() {
   return (
-    <div>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/about">
-          <h4>About</h4>
-        </Link>{" "}
-        |
-        <Link to="/careers">
-          <h4>Careers</h4>
-        </Link>
-        <Link to="/locations">
-          <h4>Locations</h4>
-        </Link>
-      </nav>
-    </div>
+    <NavHeader>
+      <Container>
+        <BurgerNav />
+        <ScootWrap>
+          <Link to="/" />
+          <h4>scoot</h4>
+        </ScootWrap>
+      </Container>
+    </NavHeader>
   );
 }
 
-export default Header;
+const NavHeader = styled.div`
+  padding: 23px 33px 23px;
+  border: 1px solid red;
+`;
+const Container = styled.div`
+  /* border: 1px solid blue; */
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const ScootWrap = styled.div`
+  margin: 22px auto;
+`;

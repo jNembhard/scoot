@@ -9,18 +9,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./organisms/About";
 import Careers from "./organisms/Careers";
 import Locations from "./organisms/Locations";
+import Layout from "./organisms/Layout";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="about" element={<About />} />
-          <Route path="careers" element={<Careers />} />
-          <Route path="locations" element={<Locations />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="about" element={<About />} />
+            <Route path="careers" element={<Careers />} />
+            <Route path="locations" element={<Locations />} />
+          </Routes>
+        </Layout>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
