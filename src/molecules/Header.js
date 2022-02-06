@@ -18,7 +18,6 @@ export default function Header() {
 
 const NavHeader = styled.div`
   padding: 23px 33px 23px;
-  border: 1px solid red;
 `;
 const Container = styled.div`
   /* border: 1px solid blue; */

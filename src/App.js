@@ -2,11 +2,9 @@
 
 function App() {
   return (
-    <div>
+    <main style={{ padding: "1rem 0" }}>
       <h1>Homepage</h1>
-
-      <h1>Main Page</h1>
-    </div>
+    </main>
   );
 }
 

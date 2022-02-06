@@ -46,7 +46,6 @@ export default BurgerNav;
 
 const BurgerWrap = styled.div`
   position: relative;
-  border: 1px solid lightblue;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: none;
