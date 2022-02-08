@@ -75,7 +75,7 @@ function Footer() {
 
 export default Footer;
 
-const FooterWrap = styled.div`
+const FooterWrap = styled.section`
   width: 100%;
   height: 438px;
   background-color: ${({ theme }) => theme.colors.darkNavy};

@@ -66,7 +66,7 @@ const SidebarContainer = styled.div`
   transform: ${(props) =>
     props.modalOpen ? "translateY(0)" : "translateX(-150%)"};
   transition: transform 0.2s ease-in-out;
-  z-index: 1;
+  z-index: 5;
 `;
 
 const UL = styled.ul`

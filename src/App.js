@@ -1,10 +1,25 @@
 // import logo from "./logo.svg";
+import styled from "styled-components";
+import HomeFeatures from "./molecules/HomeFeatures";
+import HomeHero from "./organisms/HomeHero";
+import { homefeatures } from "./data/homefeatures";
 
 function App() {
   return (
-    <main style={{ padding: "1rem 0" }}>
-      <h1>Homepage</h1>
-    </main>
+    <>
+      <HomeHero />
+      <section style={{ margin: "800px 32px 120px" }}>
+        {homefeatures.map((homefeature) => (
+          <HomeFeatures
+            key={homefeature.id}
+            id={homefeature.id}
+            icon={homefeature.icon}
+            title={homefeature.title}
+            description={homefeature.description}
+          />
+        ))}
+      </section>
+    </>
   );
 }
 

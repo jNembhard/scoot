@@ -6,10 +6,10 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { theme } from "./styles/theme";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import About from "./organisms/About";
-import Careers from "./organisms/Careers";
-import Locations from "./organisms/Locations";
-import Layout from "./organisms/Layout";
+import About from "./pages/About";
+import Careers from "./pages/Careers";
+import Locations from "./pages/Locations";
+import Layout from "./pages/Layout";
 
 ReactDOM.render(
   <React.StrictMode>

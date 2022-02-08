@@ -19,7 +19,7 @@ export default function Header() {
   );
 }
 
-const NavHeader = styled.div`
+const NavHeader = styled.section`
   padding: 23px 33px 23px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -38,6 +38,7 @@ const Container = styled.div`
   align-items: center;
   height: 18px;
   justify-content: space-between;
+  width: 100%;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
     justify-content: center;
