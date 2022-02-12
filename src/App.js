@@ -26,12 +26,14 @@ function App() {
           <ArrowFeatures
             key={arrowfeature.id}
             id={arrowfeature.id}
+            numbers={arrowfeature.id}
             image={arrowfeature.image}
             arrowimage={arrowfeature.arrowimage}
             title={arrowfeature.title}
             description={arrowfeature.description}
           />
         ))}
+        console.log(numbers)
       </ArrowWrap>
     </>
   );

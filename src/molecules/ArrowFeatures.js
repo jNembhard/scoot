@@ -7,13 +7,14 @@ export default function ArrowFeatures({
   arrowimage,
   title,
   description,
+  numbers,
 }) {
   return (
     <ArrowFeaturesWrapper>
       <ImageWrapper>
         <Image src={image} alt={title} />
       </ImageWrapper>
-      <ArrowImageWrapper>
+      <ArrowImageWrapper numbers={numbers}>
         <ArrowImage src={arrowimage} alt="arrow" />
       </ArrowImageWrapper>
       <FeaturesContentWrapper>
@@ -39,18 +40,22 @@ const ArrowFeaturesWrapper = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  border-radius: 100%;
   overflow: hidden;
+  margin-bottom: 56px;
 `;
 
 const Image = styled.img`
   max-width: 100%;
+  border-radius: 100%;
   height: auto;
 `;
 const ArrowImageWrapper = styled.div`
   position: absolute;
-  left: 50px;
-  top: 30px;
+  max-width: 100%;
+  height: auto;
+  top: ${({ numbers }) => (numbers === 1 ? "173px" : "7px")};
+  right: ${({ numbers }) => (numbers === 2 ? "200px" : "inherit")};
+  left: ${({ numbers }) => (numbers === 3 ? "130px" : "inherit")};
 `;
 const ArrowImage = styled.img``;
 
@@ -61,6 +66,17 @@ const FeaturesContentWrapper = styled.div`
   justify-content: center;
   text-align: center;
 `;
-const ContentContainer = styled.div``;
 
-const ButtonWrapper = styled.div``;
+const ContentContainer = styled.div`
+  h4 {
+    color: ${({ theme }) => theme.colors.darkNavy};
+  }
+  p {
+    color: ${({ theme }) => theme.colors.dimGrey};
+    margin: 32px 0;
+  }
+`;
+
+const ButtonWrapper = styled.div`
+  marign: 0;
+`;

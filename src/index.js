@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Careers from "./pages/Careers";
 import Locations from "./pages/Locations";
-import Layout from "./pages/Layout";
+import Layout from "./organisms/Layout";
 
 ReactDOM.render(
   <React.StrictMode>
