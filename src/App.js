@@ -1,10 +1,9 @@
-// import logo from "./logo.svg";
 import styled from "styled-components";
 import HomeFeatures from "./molecules/HomeFeatures";
 import HomeHero from "./organisms/HomeHero";
 import { homefeatures } from "./data/homedata/homefeatures";
 import { arrowfeatures } from "./data/homedata/arrowfeatures";
-import ArrowFeatures from "./molecules/ArrowFeatures";
+import ArrowFeatures from "./molecules/features/ArrowFeatures";
 
 function App() {
   return (
@@ -22,7 +21,7 @@ function App() {
         ))}
       </HomeFeaturesWrap>
       <ArrowWrap>
-        {arrowfeatures.map((arrowfeature) => (
+        {arrowfeatures.slice(0, 3).map((arrowfeature) => (
           <ArrowFeatures
             key={arrowfeature.id}
             id={arrowfeature.id}
@@ -41,7 +40,7 @@ function App() {
 export default App;
 
 const HomeFeaturesWrap = styled.div`
-  margin: 800px 32px 120px;
+  margin: 800px 32px 0;
 `;
 
 const ArrowWrap = styled.div`

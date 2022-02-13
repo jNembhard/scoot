@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ButtonScoot from "../atoms/ButtonScoot";
+import ButtonScoot from "../../atoms/ButtonScoot";
 
 export default function ArrowFeatures({
   image,
@@ -22,9 +22,11 @@ export default function ArrowFeatures({
           <h4>{title}</h4>
           <p>{description}</p>
         </ContentContainer>
-        <ButtonWrapper>
-          <ButtonScoot word="learn more" />
-        </ButtonWrapper>
+        {(numbers < 4 || numbers > 5) && (
+          <ButtonWrapper>
+            <ButtonScoot word="learn more" />
+          </ButtonWrapper>
+        )}
       </FeaturesContentWrapper>
     </ArrowFeaturesWrapper>
   );
@@ -41,11 +43,10 @@ const ArrowFeaturesWrapper = styled.div`
 
 const ImageWrapper = styled.div`
   overflow: hidden;
-  margin-bottom: 56px;
 `;
 
 const Image = styled.img`
-  max-width: 100%;
+  width: 100%;
   border-radius: 100%;
   height: auto;
 `;
@@ -53,8 +54,10 @@ const ArrowImageWrapper = styled.div`
   position: absolute;
   max-width: 100%;
   height: auto;
-  top: ${({ numbers }) => (numbers === 1 ? "173px" : "7px")};
-  right: ${({ numbers }) => (numbers === 2 ? "200px" : "inherit")};
+  top: ${({ numbers }) =>
+    numbers === 1 ? "173px" : numbers === 4 ? "133px" : "7px"};
+  right: ${({ numbers }) =>
+    numbers === 2 ? "200px" : numbers === 5 ? "140px" : "inherit"};
   left: ${({ numbers }) => (numbers === 3 ? "130px" : "inherit")};
 `;
 const ArrowImage = styled.img``;
@@ -70,6 +73,9 @@ const FeaturesContentWrapper = styled.div`
 const ContentContainer = styled.div`
   h4 {
     color: ${({ theme }) => theme.colors.darkNavy};
+    font-size: 32px;
+    letter-spacing: -1.43px;
+    line-height: 32px;
   }
   p {
     color: ${({ theme }) => theme.colors.dimGrey};
