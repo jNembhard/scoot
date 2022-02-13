@@ -31,9 +31,9 @@ const socials = [
   },
 ];
 
-function Footer() {
+export default function FooterBottom() {
   return (
-    <FooterWrap>
+    <FooterBottomWrap>
       <Container>
         <LogoContainer>
           <Link style={{ color: "inherit", textDecoration: "none" }} to="/">
@@ -69,13 +69,11 @@ function Footer() {
           ))}
         </SocialContainer>
       </Container>
-    </FooterWrap>
+    </FooterBottomWrap>
   );
 }
 
-export default Footer;
-
-const FooterWrap = styled.section`
+const FooterBottomWrap = styled.div`
   width: 100%;
   height: 438px;
   background-color: ${({ theme }) => theme.colors.darkNavy};

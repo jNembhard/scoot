@@ -61,7 +61,7 @@ const SidebarContainer = styled.div`
   width: 256px;
   height: 100vh;
   position: fixed;
-  top: 64px;
+  top: 65.5px;
   left: -13px;
   transform: ${(props) =>
     props.modalOpen ? "translateY(0)" : "translateX(-150%)"};

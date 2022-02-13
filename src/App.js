@@ -33,7 +33,6 @@ function App() {
             description={arrowfeature.description}
           />
         ))}
-        console.log(numbers)
       </ArrowWrap>
     </>
   );

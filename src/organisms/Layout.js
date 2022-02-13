@@ -1,14 +1,13 @@
 import React from "react";
 // import styled from "styled-components";
-import Footer from "../molecules/Footer";
 import Header from "../molecules/Header";
+import Footer from "../molecules/Footer/Footer";
 
 export default function Layout({ children }) {
   return (
     <div>
       <Header />
-      <main>{children}</main>
-      <Footer />
+      <main>{children}</main> <Footer />
     </div>
   );
 }
