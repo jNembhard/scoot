@@ -32,8 +32,8 @@ const ValueWrapper = styled.section`
   align-items: center;
   justify-content: center;
   margin: 0 32px;
-  margin-bottom: 145px;
 `;
+
 const TitleWrapper = styled.div``;
 const Title = styled.h4`
   font-size: 32px;

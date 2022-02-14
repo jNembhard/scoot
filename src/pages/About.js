@@ -3,6 +3,7 @@ import ArrowFeatures from "../molecules/features/ArrowFeatures";
 import { arrowfeatures } from "../data/homedata/arrowfeatures.js";
 import Value from "../molecules/about/Value";
 import styled from "styled-components";
+import Accordion from "../molecules/about/Accordion";
 
 export default function About() {
   return (
@@ -22,6 +23,7 @@ export default function About() {
         ))}
       </ArrowWrap>
       <Value valuetitle="Our values" />
+      <Accordion />
     </>
   );
 }
