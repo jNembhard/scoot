@@ -47,6 +47,7 @@ export default function AccordionItem({ question, answer }) {
 const AccordionItemWrapper = styled.li`
   background-color: ${({ theme }) => theme.colors.lightGrey};
   margin-bottom: 16px;
+  padding: 0 5px;
 
   .accordion__icon {
     margin-left: auto;

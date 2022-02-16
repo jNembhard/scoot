@@ -83,6 +83,7 @@ const TitleWrapper = styled.div`
 `;
 const Title = styled.h4`
   margin: 0;
+  color: ${({ theme }) => theme.colors.darkNavy};
 `;
 
 const DescriptionWrapper = styled.div`

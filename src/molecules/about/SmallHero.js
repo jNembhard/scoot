@@ -1,23 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-const abouthero =
-  process.env.PUBLIC_URL + "/assets/images/mobile/about-hero-mobile.jpg";
-
-export default function AboutHero() {
+export default function SmallHero({ title, heroimages, alt }) {
   return (
-    <AboutHeroWrapper>
-      <AboutHeroImageWrapper>
-        <AboutHeroImage src={abouthero} alt="about-hero" />
-      </AboutHeroImageWrapper>
+    <SmallHeroWrapper>
+      <SmallHeroImageWrapper>
+        <SmallHeroImage src={heroimages} alt={alt} />
+      </SmallHeroImageWrapper>
       <TitleWrap>
-        <MobileTitle>About</MobileTitle>
+        <MobileTitle>{title}</MobileTitle>
       </TitleWrap>
-    </AboutHeroWrapper>
+    </SmallHeroWrapper>
   );
 }
 
-const AboutHeroWrapper = styled.section`
+const SmallHeroWrapper = styled.section`
   position: relative;
   min-height: 160px;
   display: flex;
@@ -30,12 +27,12 @@ const TitleWrap = styled.div`
 const MobileTitle = styled.h3`
   color: ${({ theme }) => theme.colors.snow};
 `;
-const AboutHeroImageWrapper = styled.div`
+const SmallHeroImageWrapper = styled.div`
   position: absolute;
   width: 100%;
   max-height: 160px;
 `;
-const AboutHeroImage = styled.img`
+const SmallHeroImage = styled.img`
   width: 100%;
   height: auto;
 `;

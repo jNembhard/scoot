@@ -39,4 +39,5 @@ const Title = styled.h4`
   font-size: 32px;
   line-height: 32px;
   letter-spacing: -1.43px;
+  color: ${({ theme }) => theme.colors.darkNavy};
 `;
