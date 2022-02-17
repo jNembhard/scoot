@@ -55,7 +55,13 @@ const ArrowImageWrapper = styled.div`
   max-width: 100%;
   height: auto;
   top: ${({ numbers }) =>
-    numbers === 1 ? "173px" : numbers === 4 ? "133px" : "7px"};
+    numbers === 1
+      ? "173px"
+      : numbers === 6
+      ? "173px"
+      : numbers === 4
+      ? "133px"
+      : "7px"};
   right: ${({ numbers }) =>
     numbers === 2 ? "200px" : numbers === 5 ? "140px" : "inherit"};
   left: ${({ numbers }) => (numbers === 3 ? "130px" : "inherit")};

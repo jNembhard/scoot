@@ -2,8 +2,7 @@ import styled from "styled-components";
 import HomeFeatures from "./molecules/HomeFeatures";
 import HomeHero from "./organisms/HomeHero";
 import { homefeatures } from "./data/homedata/homefeatures";
-import { arrowfeatures } from "./data/homedata/arrowfeatures";
-import ArrowFeatures from "./molecules/features/ArrowFeatures";
+import FullArrow from "./organisms/FullArrow";
 
 function App() {
   return (
@@ -20,19 +19,7 @@ function App() {
           />
         ))}
       </HomeFeaturesWrap>
-      <ArrowWrap>
-        {arrowfeatures.slice(0, 3).map((arrowfeature) => (
-          <ArrowFeatures
-            key={arrowfeature.id}
-            id={arrowfeature.id}
-            numbers={arrowfeature.id}
-            image={arrowfeature.image}
-            arrowimage={arrowfeature.arrowimage}
-            title={arrowfeature.title}
-            description={arrowfeature.description}
-          />
-        ))}
-      </ArrowWrap>
+      <FullArrow start={0} end={3} />
     </>
   );
 }
@@ -41,8 +28,4 @@ export default App;
 
 const HomeFeaturesWrap = styled.div`
   margin: 800px 32px 0;
-`;
-
-const ArrowWrap = styled.div`
-  overflow: hidden;
 `;
