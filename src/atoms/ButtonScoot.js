@@ -10,6 +10,7 @@ const Button = styled.button`
   font-size: 15px;
   text-transform: capitalize;
   width: 180px;
+  width: ${({ word }) => (word === "learn more" ? "180px" : "247px")};
   height: 53px;
   color: ${({ theme }) => theme.colors.snow};
   background-color: ${({ theme }) => theme.colors.yellow};
