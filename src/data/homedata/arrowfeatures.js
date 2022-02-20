@@ -51,4 +51,10 @@ export const arrowfeatures = [
     description:
       "We’re helping connect cities and bring people closer together. Our scooters are also fully-electric and we offset the minimal carbon footprint for each ride.",
   },
+  {
+    id: 7,
+    title: "Your City Not Listed?",
+    description:
+      "If you’d like to see Scoot in your hometown, be sure to let us know. We track requests and plan launches based on demand. Feel free to message us by clicking the link or messaging us on social.",
+  },
 ];

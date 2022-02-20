@@ -13,7 +13,7 @@ export default function SmallHero({ title, heroimages, alt }) {
   );
 }
 
-const SmallHeroWrapper = styled.section`
+const SmallHeroWrapper = styled.div`
   position: relative;
   min-height: 160px;
   display: flex;

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import ButtonScoot from "../../atoms/ButtonScoot";
 
@@ -11,12 +10,16 @@ export default function ArrowFeatures({
 }) {
   return (
     <ArrowFeaturesWrapper>
-      <ImageWrapper>
-        <Image src={image} alt={title} />
-      </ImageWrapper>
-      <ArrowImageWrapper numbers={numbers}>
-        <ArrowImage src={arrowimage} alt="arrow" />
-      </ArrowImageWrapper>
+      {numbers < 7 && (
+        <>
+          <ImageWrapper>
+            <Image src={image} alt={title} />
+          </ImageWrapper>
+          <ArrowImageWrapper numbers={numbers}>
+            <ArrowImage src={arrowimage} alt="arrow" />
+          </ArrowImageWrapper>
+        </>
+      )}
       <FeaturesContentWrapper>
         <ContentContainer>
           <h4>{title}</h4>
@@ -24,7 +27,15 @@ export default function ArrowFeatures({
         </ContentContainer>
         {(numbers < 4 || numbers > 5) && (
           <ButtonWrapper>
-            <ButtonScoot word="learn more" />
+            <ButtonScoot
+              word={
+                numbers === 6
+                  ? "say hello"
+                  : numbers === 7
+                  ? "message us"
+                  : "learn more"
+              }
+            />
           </ButtonWrapper>
         )}
       </FeaturesContentWrapper>
@@ -38,7 +49,7 @@ const ArrowFeaturesWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 120px 32px;
+  margin: ${({ numbers }) => (numbers <= 6 ? "120px 32px" : "72px 32px")};
 `;
 
 const ImageWrapper = styled.div`
