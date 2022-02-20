@@ -84,6 +84,7 @@ const MenuLinks = styled.ul`
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
       margin-right: 0;
+      height: 25px;
     }
   }
 `;
@@ -100,6 +101,6 @@ const Button = styled.button`
   margin: 22px 0 21px 0;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 22px 0 22px 511px;
+    margin: 0;
   }
 `;

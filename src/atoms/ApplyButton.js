@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-export default function ButtonScoot({ word }) {
+export default function ApplyButton({ word }) {
   return <Button>{word}</Button>;
 }
 
@@ -9,7 +8,7 @@ const Button = styled.button`
   font-family: "Space Mono", monospace;
   font-size: 15px;
   text-transform: capitalize;
-  width: 180px;
+  width: 247px;
   height: 53px;
   color: ${({ theme }) => theme.colors.snow};
   background-color: ${({ theme }) => theme.colors.yellow};

@@ -28,4 +28,8 @@ export default App;
 
 const HomeFeaturesWrap = styled.div`
   margin: 800px 32px 0;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 750px 98px 0;
+  }
 `;

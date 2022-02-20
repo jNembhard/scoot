@@ -23,7 +23,9 @@ const NavHeader = styled.section`
   padding: 23px 33px 23px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    padding: 23px 40px 23px;
+    padding: 0 33px 23px;
+    margin: 33px auto;
+    border: 1px solid red;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
       padding: 23px 165px 23px;
@@ -40,9 +42,13 @@ const Container = styled.div`
   justify-content: space-between;
   width: 100%;
 
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    justify-content: center;
-    max-width: 1440px;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    border: 1px solid red;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      justify-content: center;
+      max-width: 1440px;
+    }
   }
 `;
 

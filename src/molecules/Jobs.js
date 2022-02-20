@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ButtonScoot from "../atoms/ButtonScoot";
+import ApplyButton from "../atoms/ApplyButton";
 
 export default function Jobs({ title, location }) {
   return (
@@ -13,7 +13,7 @@ export default function Jobs({ title, location }) {
         </LocationWrapper>
       </JobContent>
       <ApplyButtonWrapper>
-        <ButtonScoot word="apply" />
+        <ApplyButton word="apply" />
       </ApplyButtonWrapper>
     </JobWrapper>
   );

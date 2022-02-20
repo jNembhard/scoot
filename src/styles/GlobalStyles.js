@@ -31,7 +31,6 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 56px;
     line-height: 56px;
     letter-spacing: -2.5px;
-    font-color: green;
   }
 
   h2 {

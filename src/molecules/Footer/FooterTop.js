@@ -39,6 +39,10 @@ const FooterTopWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.dimGrey};
   height: 320px;
   overflow: hidden;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    height: 300px;
+  }
 `;
 
 const BackdropContainer = styled.div`
@@ -49,6 +53,7 @@ const BackdropContainer = styled.div`
   left: -600px;
   right: 10px;
 `;
+
 const Backdrop = styled.img``;
 
 const TopContainer = styled.div`
