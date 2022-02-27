@@ -6,7 +6,7 @@ import FullArrow from "./organisms/FullArrow";
 
 function App() {
   return (
-    <>
+    <AppWrap>
       <HomeHero />
       <HomeFeaturesWrap>
         {homefeatures.map((homefeature) => (
@@ -20,16 +20,21 @@ function App() {
         ))}
       </HomeFeaturesWrap>
       <FullArrow start={0} end={3} />
-    </>
+    </AppWrap>
   );
 }
 
 export default App;
 
+const AppWrap = styled.div`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    overflow-x: hidden;
+  }
+`;
 const HomeFeaturesWrap = styled.div`
   margin: 800px 32px 0;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 750px 98px 0;
+    margin: 122px 98px 0;
   }
 `;

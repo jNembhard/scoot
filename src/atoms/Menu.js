@@ -10,7 +10,9 @@ export default function Menu() {
   return (
     <MenuWrapper>
       <TitleWrap>
-        <Title>scoot</Title>
+        <Link style={{ color: "inherit", textDecoration: "none" }} to="/">
+          <Title>scoot</Title>
+        </Link>
       </TitleWrap>
       <MenuLinks>
         {navLinks.map(({ name, url }, index) => (

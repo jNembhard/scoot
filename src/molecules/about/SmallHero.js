@@ -19,6 +19,9 @@ const SmallHeroWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin-bottom: 144px;
+  }
 `;
 const TitleWrap = styled.div`
   position: absolute;
@@ -34,4 +37,9 @@ const SmallHeroImageWrapper = styled.div`
 const SmallHeroImage = styled.img`
   width: 100%;
   height: auto;
+  max-height: 160px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    max-height: 200px;
+  }
 `;

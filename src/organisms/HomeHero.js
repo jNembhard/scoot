@@ -62,6 +62,10 @@ const HomeHeroWrapper = styled.section`
   position: relative;
   z-index: 3;
   border: 1px solid transparent;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    height: 650px;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -81,6 +85,7 @@ const HeroContent = styled.div`
 const ImageWrapper = styled.div`
   position: absolute;
   width: 100%;
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 650px;
   }
@@ -115,6 +120,7 @@ const MobileTitle = styled.h3`
 
 const DescriptionWrap = styled.div`
   margin: 24px 0 34px;
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 0 34px;
   }
@@ -133,6 +139,7 @@ const ArrowWrap = styled.div`
   position: absolute;
   top: 478px;
   left: -310px;
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     top: 500px;
     left: -120px;

@@ -46,6 +46,7 @@ const ImageWrapper = styled.div`
 const FeaturesImage = styled.img`
   width: 100%;
   height: auto;
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     width: unset;
     position: absolute;
