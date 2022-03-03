@@ -7,7 +7,8 @@ function Value({ valuetitle }) {
   return (
     <ValueWrapper>
       <TitleWrapper>
-        <Title>{valuetitle}</Title>
+        <TabletTitle>{valuetitle}</TabletTitle>
+        <MobileTitle>{valuetitle}</MobileTitle>
       </TitleWrapper>
       {valuefeatures.map((valuefeature) => (
         <ValueFeatures
@@ -32,12 +33,33 @@ const ValueWrapper = styled.section`
   align-items: center;
   justify-content: center;
   margin: 0 32px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 0 155px;
+  }
 `;
 
-const TitleWrapper = styled.div``;
-const Title = styled.h4`
+const TitleWrapper = styled.div`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin-bottom: 50px;
+  }
+`;
+
+const TabletTitle = styled.h2`
+  display: none;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: unset;
+    color: ${({ theme }) => theme.colors.darkNavy};
+  }
+`;
+const MobileTitle = styled.h4`
   font-size: 32px;
   line-height: 32px;
   letter-spacing: -1.43px;
   color: ${({ theme }) => theme.colors.darkNavy};
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: none;
+  }
 `;

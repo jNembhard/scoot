@@ -33,12 +33,14 @@ const SmallHeroImageWrapper = styled.div`
   position: absolute;
   width: 100%;
   max-height: 160px;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    max-height: 200px;
+  }
 `;
 const SmallHeroImage = styled.img`
   width: 100%;
   height: auto;
   max-height: 160px;
-
   @media ${({ theme }) => theme.breakpoints.tablet} {
     max-height: 200px;
   }

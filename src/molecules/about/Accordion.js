@@ -46,6 +46,10 @@ const AccordionWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 32px 120px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 0 40px 120px;
+  }
 `;
 const FAQContent = styled.div``;
 const TitleWrap = styled.div`

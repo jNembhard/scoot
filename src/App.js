@@ -31,6 +31,7 @@ const AppWrap = styled.div`
     overflow-x: hidden;
   }
 `;
+
 const HomeFeaturesWrap = styled.div`
   margin: 800px 32px 0;
 

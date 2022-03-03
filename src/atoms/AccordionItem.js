@@ -75,6 +75,17 @@ const AccordionButton = styled.button`
   cursor: pointer;
   padding: 16px 10px;
   border: none;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    height: 92px;
+    width: 689px;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -1.07px;
+    padding: unset;
+    text-indent: 40px;
+    align-items: center;
+  }
 `;
 
 const AnswerWrapper = styled(motion.div)`
@@ -83,10 +94,20 @@ const AnswerWrapper = styled(motion.div)`
   overflow: hidden;
   transition: max-height 0.6s ease;
   margin: 0 32px 32px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    max-width: 689px;
+    margin: unset;
+  }
 `;
+
 const Answer = styled.p`
   background-color: transparent;
   color: ${({ theme }) => theme.colors.darkNavy};
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 0 32px 32px;
+  }
 `;
 
 const ChevronContainer = styled.div`
@@ -94,6 +115,9 @@ const ChevronContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin: 20px 0 22px 69px;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 20px 32px 22px 69px;
+  }
 `;
 
 const Chevron = styled.img`
