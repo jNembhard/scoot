@@ -19,6 +19,9 @@ const PlacesWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 22px;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: none;
+  }
 `;
 const TitleWrapper = styled.div`
   margin: 8px 0;

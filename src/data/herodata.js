@@ -17,7 +17,7 @@ export const herodata = [
     heroimages: {
       mobile:
         process.env.PUBLIC_URL +
-        "/assets/images/mobile/careers-locations-hero-mobile.jpg",
+        "/assets/images/mobile/careers-location-hero-mobile.jpg",
       tablet:
         process.env.PUBLIC_URL +
         "/assets/images/tablet/careers-locations-hero-tablet.jpg",

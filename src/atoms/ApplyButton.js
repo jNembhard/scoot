@@ -15,6 +15,10 @@ const Button = styled.button`
   border: 0;
   cursor: pointer;
 
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    width: 180px;
+  }
+
   &:hover {
     color: ${({ theme }) => theme.colors.yellow};
     background-color: transparent;

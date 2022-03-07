@@ -26,13 +26,26 @@ const JobWrapper = styled.div`
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.snow};
   margin: 0 32px 32px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 32px 16px;
+  }
 `;
 
 const JobContent = styled.div`
   margin: 36px 0 16px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 34px 98px 34px 48px;
+  }
 `;
 const JobTitleWrapper = styled.div`
   text-align: center;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    text-align: left;
+  }
 `;
 const JobTitle = styled.h4`
   color: ${({ theme }) => theme.colors.darkNavy};
@@ -40,9 +53,18 @@ const JobTitle = styled.h4`
   font-size: 18px;
   line-height: 24px;
   letter-spacing: -0.8px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -1.07px;
+  }
 `;
 const LocationWrapper = styled.div`
   text-align: center;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    text-align: left;
+  }
 `;
 const Location = styled.p`
   color: ${({ theme }) => theme.colors.darkNavy};
@@ -51,4 +73,8 @@ const Location = styled.p`
 
 const ApplyButtonWrapper = styled.div`
   margin: 0 32px 32px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 38px 48px 38px 0;
+  }
 `;
