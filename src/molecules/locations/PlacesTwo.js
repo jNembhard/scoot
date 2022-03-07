@@ -30,7 +30,6 @@ const PlacesWrapper = styled.div`
     flex-direction: row;
     width: 689px;
     height: 337px;
-    /* border: 1px solid red; */
   }
 `;
 const TitleWrapper = styled.div``;
