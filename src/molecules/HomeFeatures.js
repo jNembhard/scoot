@@ -28,6 +28,10 @@ const FeaturesWrapper = styled.div`
     text-align: left;
     margin: unset;
     align-items: unset;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      flex-direction: column;
+    }
   }
 `;
 
@@ -40,6 +44,11 @@ const ImageWrapper = styled.div`
     height: 96px;
     margin-right: 79px;
     position: relative;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      display: flex;
+      flex-direction: row;
+    }
   }
 `;
 
@@ -57,6 +66,7 @@ const FeaturesImage = styled.img`
 
 const Line = styled.img`
   display: none;
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: unset;
     position: absolute;
@@ -69,10 +79,23 @@ const Line = styled.img`
     filter: invert(66%) sepia(58%) saturate(622%) hue-rotate(348deg)
       brightness(108%) contrast(98%);
     opacity: 0.2;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      transform: rotate(0deg);
+      width: 340px;
+      height: 15px;
+      top: 45px;
+      left: -280px;
+    }
   }
 `;
 
-const ContentWrapper = styled.div``;
+const ContentWrapper = styled.div`
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    max-width: 350px;
+    margin-right: 25px;
+  }
+`;
 
 const SmallTitle = styled.h4`
   color: ${({ theme }) => theme.colors.darkNavy};

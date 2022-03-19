@@ -4,7 +4,7 @@ import ButtonScoot from "../../atoms/ButtonScoot";
 export default function Features({ title, description, numbers }) {
   return (
     <FeaturesWrapper>
-      <ContentContainer>
+      <ContentContainer numbers={numbers}>
         <TitleWrap>
           <TabletUpTitle>{title}</TabletUpTitle>
           <MobileTitle>{title}</MobileTitle>
@@ -14,7 +14,7 @@ export default function Features({ title, description, numbers }) {
         </DescriptionWrapper>
       </ContentContainer>
       {(numbers < 4 || numbers > 5) && (
-        <ButtonWrapper>
+        <ButtonWrapper numbers={numbers}>
           <ButtonScoot
             word={
               numbers === 6
@@ -39,6 +39,11 @@ const FeaturesWrapper = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin-bottom: 100px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      align-items: left;
+      margin-bottom: unset;
+    }
   }
 `;
 
@@ -50,12 +55,27 @@ const ContentContainer = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 64px 40px 32px;
     max-width: 600px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      text-align: left;
+      margin: ${({ numbers }) =>
+        numbers === 2
+          ? "64px 0 32px 200px"
+          : numbers === 5
+          ? "64px 0 32px 200px"
+          : "64px 200px 32px 0"};
+      max-width: 445px;
+    }
   }
 `;
 
 const TitleWrap = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 32px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      margin: 0;
+    }
   }
 `;
 
@@ -76,13 +96,21 @@ const TabletUpTitle = styled.h2`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: unset;
     color: ${({ theme }) => theme.colors.darkNavy};
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      margin: 0;
+    }
   }
 `;
 
 const DescriptionWrapper = styled.div`
   margin: 40px 0 0;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+  }
 `;
 
 const ButtonWrapper = styled.div`
   margin: 0;
+  margin-right: ${({ numbers }) => (numbers === 2 ? "60px" : "460px")};
 `;

@@ -37,5 +37,10 @@ const HomeFeaturesWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 122px 98px 0;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      display: flex;
+      margin: 160px 165px 0;
+    }
   }
 `;

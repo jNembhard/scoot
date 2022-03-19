@@ -11,7 +11,7 @@ export default function ArrowFeatures({
   numbers,
 }) {
   return (
-    <ArrowFeaturesWrapper>
+    <ArrowFeaturesWrapper numbers={numbers}>
       {numbers < 7 && (
         <>
           <ImageWrapper>
@@ -40,6 +40,11 @@ const ArrowFeaturesWrapper = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: ${({ numbers }) => (numbers <= 6 ? "145px 32px" : "72px 32px")};
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      flex-direction: ${({ numbers }) =>
+        numbers === 2 ? "row" : numbers === 5 ? "row" : "row-reverse"};
+    }
   }
 `;
 
@@ -74,6 +79,26 @@ const CircleImageWrapper = styled.div`
         : "inherit"};
     left: ${({ numbers }) =>
       numbers === 2 ? "-370px" : numbers === 4 ? "650px" : "inherit"};
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      display: unset;
+      position: absolute;
+      max-width: 100%;
+      height: auto;
+      top: 0;
+      right: ${({ numbers }) =>
+        numbers === 1
+          ? "-370px"
+          : numbers === 3
+          ? "-370px"
+          : numbers === 6
+          ? "-370px"
+          : numbers === 5
+          ? "1300px"
+          : "inherit"};
+      left: ${({ numbers }) =>
+        numbers === 2 ? "-370px" : numbers === 4 ? "1300px" : "inherit"};
+    }
   }
 `;
 
@@ -110,6 +135,31 @@ const ArrowImageWrapper = styled.div`
     right: ${({ numbers }) =>
       numbers === 2 ? "380px" : numbers === 5 ? "400px" : "inherit"};
     left: ${({ numbers }) => (numbers === 3 ? "400px" : "inherit")};
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      top: ${({ numbers }) =>
+        numbers === 1
+          ? "320px"
+          : numbers === 3
+          ? "90px"
+          : numbers === 4
+          ? "250px"
+          : numbers === 6
+          ? "320px"
+          : "0"};
+      right: ${({ numbers }) =>
+        numbers === 1
+          ? "-50px"
+          : numbers === 2
+          ? "1000px"
+          : numbers === 4
+          ? "-100px"
+          : numbers === 5
+          ? "960px"
+          : "inherit"};
+      left: ${({ numbers }) => (numbers === 3 ? "1000px" : "inherit")};
+    }
   }
 `;
+
 const ArrowImage = styled.img``;

@@ -12,10 +12,12 @@ const tablethero =
 const desktophero =
   process.env.PUBLIC_URL + "/assets/images/desktop/home-hero-desktop.jpg";
 const rightarrow = process.env.PUBLIC_URL + "/assets/patterns/right-arrow.svg";
+const line = process.env.PUBLIC_URL + "/assets/patterns/line.svg";
 
 function HomeHero() {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
+
   return (
     <HomeHeroWrapper>
       <ImageWrapper>
@@ -46,6 +48,9 @@ function HomeHero() {
           <ButtonScoot word="get scootin" />
         </ButtonWrapper>
       </HeroContent>
+      <LineWrap>
+        <Line src={line} alt="line" />
+      </LineWrap>
       <ArrowWrap>
         <RightArrow src={rightarrow} alt="right-arrow" />
       </ArrowWrap>
@@ -65,6 +70,10 @@ const HomeHeroWrapper = styled.section`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 650px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      border: unset;
+    }
   }
 `;
 
@@ -79,6 +88,11 @@ const HeroContent = styled.div`
     max-width: 573px;
     height: 296px;
     margin: 137px 98px 217px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      text-align: left;
+      margin: 137px 775px 165px 152px;
+    }
   }
 `;
 
@@ -123,6 +137,11 @@ const DescriptionWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 0 34px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      margin: 0 0 34px 57px;
+      max-width: 405px;
+    }
   }
 `;
 
@@ -131,7 +150,9 @@ const Description = styled.p`
 `;
 
 const ButtonWrapper = styled.div`
-  /* border: 1px solid red; */
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin-left: 57px;
+  }
 `;
 
 const ArrowWrap = styled.div`
@@ -143,20 +164,43 @@ const ArrowWrap = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     top: 500px;
     left: -120px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      top: 355px;
+      left: 650px;
+    }
   }
 `;
 
 const RightArrow = styled.img`
   max-width: 100%;
 `;
+const LineWrap = styled.div`
+  display: none;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: unset;
+    overflow: hidden;
+    position: absolute;
+    top: 354px;
+    left: -40px;
+    width: 204px;
+  }
+`;
+const Line = styled.img``;
 
 const WhiteCirclesWrapper = styled.div`
   display: none;
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: unset;
     position: absolute;
     top: 542px;
     right: -35px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      top: 430px;
+    }
   }
 `;
 const SemiCircles = styled.img`

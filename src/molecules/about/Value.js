@@ -10,16 +10,18 @@ function Value({ valuetitle }) {
         <TabletTitle>{valuetitle}</TabletTitle>
         <MobileTitle>{valuetitle}</MobileTitle>
       </TitleWrapper>
-      {valuefeatures.map((valuefeature) => (
-        <ValueFeatures
-          key={valuefeature.id}
-          id={valuefeature.id}
-          number={valuefeature.id}
-          image={valuefeature.image}
-          title={valuefeature.title}
-          description={valuefeature.description}
-        />
-      ))}
+      <ValueFeaturesWrapper>
+        {valuefeatures.map((valuefeature) => (
+          <ValueFeatures
+            key={valuefeature.id}
+            id={valuefeature.id}
+            number={valuefeature.id}
+            image={valuefeature.image}
+            title={valuefeature.title}
+            description={valuefeature.description}
+          />
+        ))}
+      </ValueFeaturesWrapper>
     </ValueWrapper>
   );
 }
@@ -36,6 +38,13 @@ const ValueWrapper = styled.section`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 155px;
+  }
+`;
+
+const ValueFeaturesWrapper = styled.div`
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin-top: 50px;
+    display: inline-flex;
   }
 `;
 

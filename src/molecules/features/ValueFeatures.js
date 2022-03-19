@@ -31,6 +31,9 @@ const ValueFeaturesWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -43,6 +46,7 @@ const ImageWrapper = styled.div`
   margin-bottom: 80px;
   min-width: 311px;
 `;
+
 const ValueImageContainer = styled.div`
   overflow: hidden;
   position: absolute;

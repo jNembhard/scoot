@@ -37,12 +37,14 @@ const MenuWrapper = styled.div`
     font-family: "Space Mono", monospace;
     display: flex;
     align-items: center;
-    just-content: space-between;
+    justify-content: space-between;
     height: 53px;
     margin-top: 22px;
 
-    @media ${({ theme }) => theme.breakpoints.tablet} {
-      margin: 22px auto 0;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      margin: 0;
+      width: 100%;
+      justify-content: unset;
     }
   }
 `;
@@ -52,9 +54,10 @@ const TitleWrap = styled.div`
   padding-right: 60px;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
-    padding-right: 60px;
+    padding-right: 0;
   }
 `;
+
 const Title = styled.h3`
   width: 0;
 `;
@@ -85,8 +88,7 @@ const MenuLinks = styled.ul`
     }
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin-right: 0;
-      height: 25px;
+      margin-right: 530px;
     }
   }
 `;
