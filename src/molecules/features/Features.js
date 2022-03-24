@@ -3,14 +3,14 @@ import ButtonScoot from "../../atoms/ButtonScoot";
 
 export default function Features({ title, description, numbers }) {
   return (
-    <FeaturesWrapper>
+    <FeaturesWrapper numbers={numbers}>
       <ContentContainer numbers={numbers}>
         <TitleWrap>
           <TabletUpTitle>{title}</TabletUpTitle>
           <MobileTitle>{title}</MobileTitle>
         </TitleWrap>
-        <DescriptionWrapper>
-          <p>{description}</p>
+        <DescriptionWrapper numbers={numbers} s>
+          <Description>{description}</Description>
         </DescriptionWrapper>
       </ContentContainer>
       {(numbers < 4 || numbers > 5) && (
@@ -43,6 +43,11 @@ const FeaturesWrapper = styled.div`
     @media ${({ theme }) => theme.breakpoints.desktop} {
       align-items: left;
       margin-bottom: unset;
+      flex-direction: ${({ numbers }) => (numbers === 7 ? "row" : "column")};
+      justify-content: ${({ numbers }) =>
+        numbers === 7 ? "space-between" : "center"};
+      width: ${({ numbers }) => (numbers === 7 ? "1111px" : "unset")};
+      height: ${({ numbers }) => (numbers === 7 ? "100px" : "unset")};
     }
   }
 `;
@@ -63,8 +68,12 @@ const ContentContainer = styled.div`
           ? "64px 0 32px 200px"
           : numbers === 5
           ? "64px 0 32px 200px"
+          : numbers === 7
+          ? "0"
           : "64px 200px 32px 0"};
-      max-width: 445px;
+      max-width: ${({ numbers }) => (numbers === 7 ? "850px" : "445px")};
+      display: ${({ numbers }) => (numbers === 7 ? "inline-flex" : "inherit")};
+      flex-direction: ${({ numbers }) => (numbers === 7 ? "row" : "inherit")};
     }
   }
 `;
@@ -107,10 +116,19 @@ const DescriptionWrapper = styled.div`
   margin: 40px 0 0;
 
   @media ${({ theme }) => theme.breakpoints.desktop} {
+    max-width: ${({ numbers }) => (numbers === 7 ? "445px" : "inherit")};
+    margin: ${({ numbers }) => (numbers === 7 ? "0" : "40px 0 0")};
   }
 `;
+
+const Description = styled.p``;
 
 const ButtonWrapper = styled.div`
   margin: 0;
   margin-right: ${({ numbers }) => (numbers === 2 ? "60px" : "460px")};
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin-right: ${({ numbers }) =>
+      numbers === 2 ? "60px" : numbers === 7 ? "0" : "460px"};
+  }
 `;

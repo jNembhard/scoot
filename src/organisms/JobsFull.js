@@ -20,4 +20,8 @@ export default function JobsFull() {
 
 const JobsFullWrapper = styled.div`
   margin-bottom: 120px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin: 120px 165px 160px;
+  }
 `;

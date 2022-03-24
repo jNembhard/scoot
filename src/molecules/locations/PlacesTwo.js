@@ -32,6 +32,7 @@ const PlacesWrapper = styled.div`
     height: 337px;
   }
 `;
+
 const TitleWrapper = styled.div``;
 const TitleContainer = styled.div`
   display: inline-flex;
@@ -62,6 +63,31 @@ const TitleContainer = styled.div`
       : numbers === 4
       ? "515px"
       : "unset"};
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    width: 189px;
+    height: 88px;
+    top: ${({ numbers }) =>
+      numbers === 1
+        ? "71px"
+        : numbers === 2
+        ? "18px"
+        : numbers === 3
+        ? "251px"
+        : numbers === 4
+        ? "78px"
+        : "unset"};
+    left: ${({ numbers }) =>
+      numbers === 1
+        ? "147px"
+        : numbers === 2
+        ? "393px"
+        : numbers === 3
+        ? "779px"
+        : numbers === 4
+        ? "856px"
+        : "unset"};
+  }
 `;
 
 const Triangle = styled.div`
@@ -92,6 +118,30 @@ const Triangle = styled.div`
       : numbers === 4
       ? "580px"
       : "unset"};
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    top: ${({ numbers }) =>
+      numbers === 1
+        ? "158px"
+        : numbers === 2
+        ? "105px"
+        : numbers === 3
+        ? "338px"
+        : numbers === 4
+        ? "165.5px"
+        : "unset"};
+    left: ${({ numbers }) =>
+      numbers === 1
+        ? "244.5px"
+        : numbers === 2
+        ? "487.5px"
+        : numbers === 3
+        ? "876.5px"
+        : numbers === 4
+        ? "954.5px"
+        : "unset"};
+    border-width: 12px 12px 0 12px;
+  }
 `;
 const Title = styled.h4`
   color: ${({ theme }) => theme.colors.darkNavy};
@@ -99,4 +149,9 @@ const Title = styled.h4`
   font-size: 13px;
   line-height: 28px;
   letter-spacing: -0.58px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    font-size: 24px;
+    letter-spacing: -1.07px;
+  }
 `;

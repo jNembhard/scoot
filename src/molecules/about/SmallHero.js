@@ -31,6 +31,10 @@ const SmallHeroWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     overflow-x: hidden;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      overflow-y: hidden;
+    }
   }
 `;
 const TitleWrap = styled.div`

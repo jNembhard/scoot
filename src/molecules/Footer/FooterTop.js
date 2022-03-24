@@ -12,7 +12,7 @@ const appstores = [
   { name: "google-play", store: googleplay },
 ];
 
-export default function FooterTop() {
+export default function FooterTop({ title }) {
   return (
     <FooterTopWrap>
       <BackdropContainer>
@@ -20,7 +20,8 @@ export default function FooterTop() {
       </BackdropContainer>
       <TopContainer>
         <CTAWrap>
-          <CTA>Sign up and Scoot off today</CTA>
+          <CTATablet>{title}</CTATablet>
+          <CTAMobile>{title}</CTAMobile>
         </CTAWrap>
         <AppStoreWrap>
           {appstores.map(({ name, store }, index) => (
@@ -66,26 +67,73 @@ const TopContainer = styled.div`
   z-index: 2;
   left: 32px;
   right: 32px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    flex-direction: row;
+    margin: 51px 165px 0;
+    text-align: left;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+  }
 `;
 const CTAWrap = styled.div`
   padding-top: 32px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    padding-top: unset;
+    margin: 60px 78px 40px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      max-width: 415px;
+      margin: 60px 39px 40px;
+    }
+  }
 `;
-const CTA = styled.h3`
+
+const CTATablet = styled.h2`
+  display: none;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: unset;
+    font-size: 48px;
+    letter-spacing: -2.14px;
+    color: ${({ theme }) => theme.colors.snow};
+    margin-bottom: 40px;
+  }
+`;
+const CTAMobile = styled.h3`
   font-size: 32px;
   letter-spacing: -1.43px;
   color: ${({ theme }) => theme.colors.snow};
   margin-bottom: 40px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: none;
+  }
 `;
 
 const AppStoreWrap = styled.div`
   display: inline-flex;
   align-items: center;
   margin-bottom: 88px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin-bottom: unset;
+  }
 `;
+
 const AppImageWrapper = styled.div`
   margin: 0 6px;
 `;
+
 const AppImage = styled.img`
   width: ${({ appstore }) => (appstore === "apple-store" ? "113px" : "130px")};
   height: 40px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    width: ${({ appstore }) =>
+      appstore === "apple-store" ? "159px" : "182px"};
+    height: 52px;
+  }
 `;

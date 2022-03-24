@@ -6,7 +6,7 @@ import FooterTop from "./FooterTop";
 export default function Footer() {
   return (
     <FooterWrap>
-      <FooterTop />
+      <FooterTop title="Sign up and Scoot off today" />
       <FooterBottom />
     </FooterWrap>
   );

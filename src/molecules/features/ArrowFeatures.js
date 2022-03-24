@@ -156,6 +156,8 @@ const ArrowImageWrapper = styled.div`
           ? "-100px"
           : numbers === 5
           ? "960px"
+          : numbers === 6
+          ? "-40px"
           : "inherit"};
       left: ${({ numbers }) => (numbers === 3 ? "1000px" : "inherit")};
     }

@@ -92,6 +92,10 @@ const Title = styled.h4`
 
 const DescriptionWrapper = styled.div`
   text-align: center;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    padding: 0 5px;
+  }
 `;
 const Description = styled.p`
   color: ${({ theme }) => theme.colors.dimGrey};

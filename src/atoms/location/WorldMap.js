@@ -36,6 +36,12 @@ const MapWrapper = styled.div`
     margin: 0 auto;
     width: 689px;
     max-width: 800px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      width: 1110px;
+      height: 543px;
+      max-width: 1110px;
+    }
   }
 `;
 
