@@ -6,7 +6,7 @@ export default function ValueFeatures({ image, title, description, number }) {
     <ValueFeaturesWrapper>
       <ImageWrapper>
         <ValueImageContainer>
-          <ValueImage src={image} />
+          <ValueImage src={image} alt={title} />
         </ValueImageContainer>
         <NumberWrapper>
           <Number>0{number}</Number>
