@@ -13,7 +13,7 @@ export default function ArrowFeatures({
   return (
     <ArrowFeaturesWrapper numbers={numbers}>
       {numbers < 7 && (
-        <>
+        <div>
           <ImageWrapper>
             <Image src={image} alt={title} />
           </ImageWrapper>
@@ -23,7 +23,7 @@ export default function ArrowFeatures({
           <CircleImageWrapper numbers={numbers}>
             <CircleImage src={circle} alt="" />
           </CircleImageWrapper>
-        </>
+        </div>
       )}
       <Features title={title} description={description} numbers={numbers} />
     </ArrowFeaturesWrapper>
@@ -66,44 +66,41 @@ const CircleImageWrapper = styled.div`
     position: absolute;
     max-width: 100%;
     height: auto;
+    z-index: -1;
     top: 0;
     right: ${({ numbers }) =>
       numbers === 1
         ? "-370px"
         : numbers === 3
         ? "-370px"
+        : numbers === 4
+        ? "-370px"
         : numbers === 6
         ? "-370px"
-        : numbers === 5
-        ? "650px"
         : "inherit"};
     left: ${({ numbers }) =>
-      numbers === 2 ? "-370px" : numbers === 4 ? "650px" : "inherit"};
+      numbers === 2 ? "-370px" : numbers === 5 ? "-370px" : "inherit"};
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
       display: unset;
       position: absolute;
-      max-width: 100%;
-      height: auto;
       top: 0;
       right: ${({ numbers }) =>
         numbers === 1
           ? "-420px"
           : numbers === 3
           ? "-420px"
+          : numbers === 4
+          ? "-420px"
           : numbers === 6
           ? "-420px"
-          : numbers === 5
-          ? "1180px"
           : "inherit"};
       left: ${({ numbers }) =>
-        numbers === 2 ? "-420px" : numbers === 4 ? "1180px" : "inherit"};
+        numbers === 2 ? "-420px" : numbers === 5 ? "-420px" : "inherit"};
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
         display: unset;
         position: absolute;
-        max-width: 100%;
-        height: auto;
         top: 0;
         right: ${({ numbers }) =>
           numbers === 1
@@ -126,8 +123,6 @@ const CircleImage = styled.img``;
 
 const ArrowImageWrapper = styled.div`
   position: absolute;
-  max-width: 100%;
-  height: auto;
   top: ${({ numbers }) =>
     numbers === 1
       ? "173px"

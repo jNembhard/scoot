@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import HomeFeatures from "./molecules/HomeFeatures";
 import HomeHero from "./organisms/HomeHero";
@@ -7,6 +8,9 @@ import FullArrow from "./organisms/FullArrow";
 function App() {
   return (
     <AppWrap>
+      <Helmet>
+        <title>Scoot | Home</title>
+      </Helmet>
       <HomeHero />
       <HomeFeaturesWrap>
         {homefeatures.map((homefeature) => (

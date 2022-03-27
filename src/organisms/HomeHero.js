@@ -103,9 +103,12 @@ const HeroContent = styled.div`
 const ImageWrapper = styled.div`
   position: absolute;
   width: 100%;
+  overflow: hidden;
+  max-height: 650px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 650px;
+    max-height: 650px;
   }
 `;
 
@@ -188,7 +191,7 @@ const LineWrap = styled.div`
   display: none;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    display: unset;
+    display: none;
     overflow: hidden;
     position: absolute;
     top: 354px;
@@ -196,6 +199,7 @@ const LineWrap = styled.div`
     width: 204px;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
+      display: unset;
       top: 315px;
       left: -100px;
       width: 204px;

@@ -5,7 +5,7 @@ const whitecircles =
 
 export default function SmallHero({ title, heroimages, alt }) {
   return (
-    <SmallHeroWrapper>
+    <SmallHeroWrapper title={title}>
       <SmallHeroImageWrapper>
         <SmallHeroImage src={heroimages} alt={alt} />
       </SmallHeroImageWrapper>
@@ -27,10 +27,10 @@ const SmallHeroWrapper = styled.div`
   align-items: center;
   justify-content: center;
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin-bottom: 144px;
     flex-direction: row;
     justify-content: space-between;
     overflow-x: hidden;
+    margin-bottom: ${({ title }) => (title === "Locations" ? "144px" : "0")};
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
       overflow-y: hidden;

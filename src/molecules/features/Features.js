@@ -113,7 +113,8 @@ const TabletUpTitle = styled.h2`
 `;
 
 const DescriptionWrapper = styled.div`
-  margin: 40px 0 0;
+  max-width: ${({ numbers }) => (numbers === 7 ? "445px" : "500px")};
+  margin: ${({ numbers }) => (numbers === 7 ? "0" : "40px auto 0")};
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
     max-width: ${({ numbers }) => (numbers === 7 ? "445px" : "inherit")};
@@ -125,7 +126,6 @@ const Description = styled.p``;
 
 const ButtonWrapper = styled.div`
   margin: 0;
-  margin-right: ${({ numbers }) => (numbers === 2 ? "60px" : "460px")};
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-right: ${({ numbers }) =>

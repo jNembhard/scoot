@@ -72,7 +72,7 @@ const Line = styled.img`
     position: absolute;
     z-index: 0;
     transform: rotate(90deg);
-    top: -80px;
+    top: -60px;
     left: -50px;
     filter: invert(66%) sepia(58%) saturate(622%) hue-rotate(348deg)
       brightness(108%) contrast(98%);

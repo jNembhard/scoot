@@ -106,6 +106,13 @@ const Button = styled.button`
   height: 53px;
   border: 0;
   margin: 22px 0 21px 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+    color: ${({ theme }) => theme.colors.yellow};
+    border: 2px solid ${({ theme }) => theme.colors.yellow};
+  }
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0;

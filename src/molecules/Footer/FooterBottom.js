@@ -47,7 +47,7 @@ export default function FooterBottom() {
               to={url}
               key={index}
             >
-              <p>{name}</p>
+              <NavName>{name}</NavName>
             </Link>
           ))}
         </NavContainer>
@@ -59,12 +59,7 @@ export default function FooterBottom() {
               rel="noopener noreferrer"
               href={social.url}
             >
-              <img
-                src={social.media}
-                width="24px"
-                height="24px"
-                alt={social.name}
-              />
+              <SocialIcon src={social.media} alt={social.name} />
             </a>
           ))}
         </SocialContainer>
@@ -128,21 +123,22 @@ const NavContainer = styled.div`
     height: 96px;
     margin: 36px 0;
   }
+`;
 
-  p {
-    font-family: "Space Mono", monospace;
-    text-transform: capitalize;
-    color: ${({ theme }) => theme.colors.dimGrey};
+const NavName = styled.p`
+  font-family: "Space Mono", monospace;
+  text-transform: capitalize;
+  color: ${({ theme }) => theme.colors.dimGrey};
 
-    @media ${({ theme }) => theme.breakpoints.tablet} {
-      margin: 35px 16px 35px 16px;
-    }
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 35px 16px 35px 16px;
+  }
 
-    &:hover {
-      color: ${({ theme }) => theme.colors.snow};
-    }
+  &:hover {
+    color: ${({ theme }) => theme.colors.yellow};
   }
 `;
+
 const SocialContainer = styled.div`
   display: inline-flex;
   align-items: center;
@@ -160,4 +156,9 @@ const SocialContainer = styled.div`
       margin: 36px 40px 36px 570px;
     }
   }
+`;
+
+const SocialIcon = styled.img`
+  width: 24px;
+  height: 24px;
 `;

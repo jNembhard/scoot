@@ -25,7 +25,6 @@ const NavHeader = styled.section`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     padding: 0 33px 23px;
     margin: 33px auto;
-    /* border: 1px solid red; */
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
       padding: 23px 165px 23px;
@@ -43,8 +42,6 @@ const Container = styled.div`
   width: 100%;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    /* border: 1px solid red; */
-
     @media ${({ theme }) => theme.breakpoints.laptop} {
       justify-content: center;
       max-width: 1440px;
