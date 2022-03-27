@@ -29,7 +29,7 @@ const FeaturesWrapper = styled.div`
     margin: unset;
     align-items: unset;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       flex-direction: column;
     }
   }
@@ -45,7 +45,7 @@ const ImageWrapper = styled.div`
     margin-right: 79px;
     position: relative;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       display: flex;
       flex-direction: row;
     }
@@ -80,7 +80,7 @@ const Line = styled.img`
       brightness(108%) contrast(98%);
     opacity: 0.2;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       transform: rotate(0deg);
       width: 340px;
       height: 15px;
@@ -91,7 +91,7 @@ const Line = styled.img`
 `;
 
 const ContentWrapper = styled.div`
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     max-width: 350px;
     margin-right: 25px;
   }

@@ -37,7 +37,7 @@ const MapWrapper = styled.div`
     width: 689px;
     max-width: 800px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       width: 1110px;
       height: 543px;
       max-width: 1110px;

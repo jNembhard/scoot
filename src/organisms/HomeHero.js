@@ -71,7 +71,7 @@ const HomeHeroWrapper = styled.section`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 650px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       border: unset;
     }
   }
@@ -89,9 +89,13 @@ const HeroContent = styled.div`
     height: 296px;
     margin: 137px 98px 217px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       text-align: left;
-      margin: 137px 775px 165px 152px;
+      margin: 100px 98px 200px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin: 137px 775px 165px 152px;
+      }
     }
   }
 `;
@@ -138,7 +142,7 @@ const DescriptionWrap = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 0 34px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       margin: 0 0 34px 57px;
       max-width: 405px;
     }
@@ -150,7 +154,7 @@ const Description = styled.p`
 `;
 
 const ButtonWrapper = styled.div`
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-left: 57px;
   }
 `;
@@ -165,9 +169,14 @@ const ArrowWrap = styled.div`
     top: 500px;
     left: -120px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      top: 355px;
-      left: 650px;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      top: 320px;
+      left: 580px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        top: 355px;
+        left: 650px;
+      }
     }
   }
 `;
@@ -185,6 +194,18 @@ const LineWrap = styled.div`
     top: 354px;
     left: -40px;
     width: 204px;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      top: 315px;
+      left: -100px;
+      width: 204px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        top: 354px;
+        left: -40px;
+        width: 204px;
+      }
+    }
   }
 `;
 const Line = styled.img``;
@@ -198,11 +219,16 @@ const WhiteCirclesWrapper = styled.div`
     top: 542px;
     right: -35px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      top: 430px;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      top: 400px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        top: 430px;
+      }
     }
   }
 `;
+
 const SemiCircles = styled.img`
   z-index: 5;
 `;

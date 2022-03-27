@@ -68,7 +68,7 @@ const TopContainer = styled.div`
   left: 32px;
   right: 32px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     flex-direction: row;
     margin: 51px 165px 0;
     text-align: left;
@@ -84,7 +84,7 @@ const CTAWrap = styled.div`
     padding-top: unset;
     margin: 60px 78px 40px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       max-width: 415px;
       margin: 60px 39px 40px;
     }
@@ -118,7 +118,7 @@ const AppStoreWrap = styled.div`
   align-items: center;
   margin-bottom: 88px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-bottom: unset;
   }
 `;
@@ -131,7 +131,7 @@ const AppImage = styled.img`
   width: ${({ appstore }) => (appstore === "apple-store" ? "113px" : "130px")};
   height: 40px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     width: ${({ appstore }) =>
       appstore === "apple-store" ? "159px" : "182px"};
     height: 52px;

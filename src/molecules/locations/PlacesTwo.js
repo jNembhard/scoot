@@ -64,7 +64,7 @@ const TitleContainer = styled.div`
       ? "515px"
       : "unset"};
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     width: 189px;
     height: 88px;
     top: ${({ numbers }) =>
@@ -79,7 +79,7 @@ const TitleContainer = styled.div`
         : "unset"};
     left: ${({ numbers }) =>
       numbers === 1
-        ? "147px"
+        ? "130px"
         : numbers === 2
         ? "393px"
         : numbers === 3
@@ -119,7 +119,7 @@ const Triangle = styled.div`
       ? "580px"
       : "unset"};
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     top: ${({ numbers }) =>
       numbers === 1
         ? "158px"
@@ -132,7 +132,7 @@ const Triangle = styled.div`
         : "unset"};
     left: ${({ numbers }) =>
       numbers === 1
-        ? "244.5px"
+        ? "224.5px"
         : numbers === 2
         ? "487.5px"
         : numbers === 3
@@ -150,7 +150,7 @@ const Title = styled.h4`
   line-height: 28px;
   letter-spacing: -0.58px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     font-size: 24px;
     letter-spacing: -1.07px;
   }

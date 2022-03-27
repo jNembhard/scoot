@@ -109,7 +109,6 @@ const LogoContainer = styled.div`
     height: 96px;
   }
   h3 {
-    /* height: 0; */
     color: ${({ theme }) => theme.colors.snow};
   }
 `;
@@ -160,9 +159,5 @@ const SocialContainer = styled.div`
       flex-direction: row;
       margin: 36px 40px 36px 570px;
     }
-  }
-
-  a {
-    /* margin: 0 7px 32px; */
   }
 `;

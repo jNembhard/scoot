@@ -29,6 +29,10 @@ export default App;
 const AppWrap = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     overflow-x: hidden;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      max-width: 1440px;
+    }
   }
 `;
 
@@ -38,9 +42,14 @@ const HomeFeaturesWrap = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 122px 98px 0;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       display: flex;
-      margin: 160px 165px 0;
+      margin: 100px 105px 0;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        display: flex;
+        margin: 160px 165px 0;
+      }
     }
   }
 `;

@@ -40,7 +40,7 @@ const FeaturesWrapper = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin-bottom: 100px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       align-items: left;
       margin-bottom: unset;
       flex-direction: ${({ numbers }) => (numbers === 7 ? "row" : "column")};
@@ -61,7 +61,7 @@ const ContentContainer = styled.div`
     margin: 64px 40px 32px;
     max-width: 600px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       text-align: left;
       margin: ${({ numbers }) =>
         numbers === 2
@@ -82,7 +82,7 @@ const TitleWrap = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 32px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       margin: 0;
     }
   }
@@ -106,7 +106,7 @@ const TabletUpTitle = styled.h2`
     display: unset;
     color: ${({ theme }) => theme.colors.darkNavy};
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       margin: 0;
     }
   }
@@ -115,7 +115,7 @@ const TabletUpTitle = styled.h2`
 const DescriptionWrapper = styled.div`
   margin: 40px 0 0;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     max-width: ${({ numbers }) => (numbers === 7 ? "445px" : "inherit")};
     margin: ${({ numbers }) => (numbers === 7 ? "0" : "40px 0 0")};
   }
@@ -127,7 +127,7 @@ const ButtonWrapper = styled.div`
   margin: 0;
   margin-right: ${({ numbers }) => (numbers === 2 ? "60px" : "460px")};
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-right: ${({ numbers }) =>
       numbers === 2 ? "60px" : numbers === 7 ? "0" : "460px"};
   }

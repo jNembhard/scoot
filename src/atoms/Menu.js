@@ -88,7 +88,10 @@ const MenuLinks = styled.ul`
     }
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin-right: 530px;
+      margin-right: 400px;
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin-right: 530px;
+      }
     }
   }
 `;

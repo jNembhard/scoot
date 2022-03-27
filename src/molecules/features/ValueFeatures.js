@@ -31,9 +31,6 @@ const ValueFeaturesWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  @media ${({ theme }) => theme.breakpoints.desktop} {
-  }
 `;
 
 const ImageWrapper = styled.div`
@@ -93,7 +90,7 @@ const Title = styled.h4`
 const DescriptionWrapper = styled.div`
   text-align: center;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     padding: 0 5px;
   }
 `;

@@ -1,12 +1,18 @@
 import Header from "../molecules/Header";
 import Footer from "../molecules/footer/Footer";
+import styled from "styled-components";
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <LayoutWrapper>
       <Header />
       <main>{children}</main>
       <Footer />
-    </div>
+    </LayoutWrapper>
   );
 }
+
+const LayoutWrapper = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+`;

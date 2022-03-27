@@ -32,7 +32,7 @@ const SmallHeroWrapper = styled.div`
     justify-content: space-between;
     overflow-x: hidden;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       overflow-y: hidden;
     }
   }

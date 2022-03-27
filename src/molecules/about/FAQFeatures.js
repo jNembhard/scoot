@@ -28,13 +28,13 @@ const FAQFeaturesWrapper = styled.div`
   flex-direction: column;
   text-align: center;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     flex-direction: row;
   }
 `;
 
 const SubTitleWrap = styled.div`
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     width: 350px;
     height: 48px;
     margin: 10px 30px 0 0;
@@ -45,7 +45,7 @@ const SubTitleWrap = styled.div`
 const SubTitleTablet = styled.h2`
   display: none;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     display: unset;
     color: ${({ theme }) => theme.colors.darkNavy};
   }
@@ -57,7 +57,7 @@ const SubTitleMobile = styled.h4`
   line-height: 28px;
   letter-spacing: -1.07px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     display: none;
   }
 `;

@@ -42,7 +42,7 @@ const ValueWrapper = styled.section`
 `;
 
 const ValueFeaturesWrapper = styled.div`
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-top: 50px;
     display: inline-flex;
   }
