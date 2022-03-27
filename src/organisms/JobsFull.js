@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Jobs from "../molecules/Jobs";
 import { jobs } from "../data/jobs";

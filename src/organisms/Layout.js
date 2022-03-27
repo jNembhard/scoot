@@ -1,5 +1,5 @@
 import Header from "../molecules/Header";
-import Footer from "../molecules/footer/Footer";
+import Footer from "../molecules/footercomponents/Footer";
 import styled from "styled-components";
 
 export default function Layout({ children }) {

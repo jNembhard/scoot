@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import ButtonScoot from "../atoms/ButtonScoot";
 import { useMediaQuery } from "../hooks/useMediaQuery";
