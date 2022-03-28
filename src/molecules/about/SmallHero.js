@@ -57,9 +57,9 @@ const MobileTitle = styled.h3`
 const SmallHeroImageWrapper = styled.div`
   position: absolute;
   width: 100%;
-  overflow-hidden;
+  overflow: hidden;
   max-height: 160px;
-  
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     max-height: 200px;
   }

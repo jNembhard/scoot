@@ -1,7 +1,6 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import SpaceMonoBold from "./fonts/SpaceMono-Bold.ttf";
 import LexendDecaRegular from "./fonts/LexendDeca-Regular.ttf";
-// import { theme } from "./theme";
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -62,6 +61,7 @@ export const GlobalStyles = createGlobalStyle`
     src: url(${SpaceMonoBold}) format("truetype");
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
   }
 
   @font-face {
@@ -69,5 +69,6 @@ export const GlobalStyles = createGlobalStyle`
     src: url(${LexendDecaRegular}) format("truetype");
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
   }
 `;
