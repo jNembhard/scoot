@@ -91,6 +91,7 @@ const Line = styled.img`
 `;
 
 const ContentWrapper = styled.div`
+  max-width: 550px;
   @media ${({ theme }) => theme.breakpoints.laptop} {
     max-width: 350px;
     margin-right: 25px;

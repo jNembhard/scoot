@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import useScrollBlock from "../hooks/useScrollBlock";
+import { useOnClickOutside } from "../hooks/useOnClickOutside";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -12,16 +14,26 @@ const navLinks = [
 
 function BurgerNav() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [blockScroll, allowScroll] = useScrollBlock();
   const ref = useRef();
+
+  useOnClickOutside(ref, () =>
+    setModalOpen(false) ? blockScroll() : allowScroll()
+  );
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = modalOpen ? "hidden" : "unset";
+  });
 
   const toggle = () => setModalOpen(!modalOpen);
   const getImageName = () => (modalOpen ? closeIcon : openIcon);
   return (
-    <BurgerWrap>
+    <BurgerWrap ref={ref}>
       <BurgerContainer>
         <img onClick={() => toggle()} src={getImageName()} alt="close-icon" />
       </BurgerContainer>
-      <SidebarContainer ref={ref} modalOpen={modalOpen}>
+      <SidebarContainer modalOpen={modalOpen}>
         <UL>
           {navLinks.map(({ name, url }, index) => (
             <LinkList key={index}>
@@ -61,7 +73,7 @@ const SidebarContainer = styled.div`
   width: 256px;
   height: 100vh;
   position: fixed;
-  top: 65.5px;
+  top: 68px;
   left: -13px;
   transform: ${(props) =>
     props.modalOpen ? "translateY(0)" : "translateX(-150%)"};

@@ -139,10 +139,12 @@ const MobileTitle = styled.h3`
 `;
 
 const DescriptionWrap = styled.div`
-  margin: 24px 0 34px;
+  margin: 24px auto 34px;
+  max-width: 340px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 0 0 34px;
+    margin: 0 auto 34px;
+    max-width: 573px;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
       margin: 0 0 34px 57px;
@@ -151,9 +153,7 @@ const DescriptionWrap = styled.div`
   }
 `;
 
-const Description = styled.p`
-  /* margin: 0 0 34px; */
-`;
+const Description = styled.p``;
 
 const ButtonWrapper = styled.div`
   @media ${({ theme }) => theme.breakpoints.laptop} {
