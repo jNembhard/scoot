@@ -23,14 +23,14 @@ function BurgerNav() {
 
   useEffect(() => {
     const body = document.querySelector("body");
-    const scrollY = document.body.style.top;
+    // const scrollY = document.body.style.top;
 
     body.style.overflow = modalOpen ? "hidden" : "unset";
     body.style.position = modalOpen ? "fixed" : "";
-    // body.style.top = modalOpen ? `-${window.scrollY}px` : "";
-    body.style.top = modalOpen
-      ? `-${window.scrollY}px`
-      : window.scroll(0, parseInt(scrollY || "0") * -1);
+    body.style.top = modalOpen ? `-${window.scrollY}px` : "";
+    // body.style.top = modalOpen
+    //   ? `-${window.scrollY}px`
+    //   : window.scroll(0, parseInt(scrollY || "0") * -1);
   });
 
   const toggle = () => setModalOpen(!modalOpen);
