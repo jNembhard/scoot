@@ -25,9 +25,9 @@ function BurgerNav() {
     const body = document.querySelector("body");
     const scrollY = document.body.style.top;
 
-    // body.style.overflow = modalOpen ? "hidden" : "unset";
+    body.style.overflow = modalOpen ? "hidden" : "unset";
     body.style.position = modalOpen ? "fixed" : "";
-    body.style.top = modalOpen ? `-${window.scrollY}px` : "";
+
     body.style.top = modalOpen
       ? `-${window.scrollY}px`
       : window.scrollTo(0, parseInt(scrollY || "0") * -1);
