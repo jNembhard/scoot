@@ -23,7 +23,8 @@ function BurgerNav() {
 
   useEffect(() => {
     const body = document.querySelector("body");
-    body.style.overflow = modalOpen ? "hidden" : "unset";
+    body.style.overflow = modalOpen ? "hidden" : "";
+    // body.style.position = modalOpen ? "fixed" : "";
   });
 
   const toggle = () => setModalOpen(!modalOpen);
