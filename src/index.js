@@ -10,10 +10,12 @@ import About from "./pages/About";
 import Careers from "./pages/Careers";
 import Locations from "./pages/Locations";
 import Layout from "./organisms/Layout";
+import ScrollToTop from "./atoms/ScrollToTop";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Layout>
