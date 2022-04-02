@@ -89,9 +89,11 @@ const Title = styled.h4`
 
 const DescriptionWrapper = styled.div`
   text-align: center;
+  max-width: 500px;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
     padding: 0 5px;
+    max-width: unset;
   }
 `;
 const Description = styled.p`

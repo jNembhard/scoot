@@ -9,7 +9,7 @@ export default function Features({ title, description, numbers }) {
           <TabletUpTitle>{title}</TabletUpTitle>
           <MobileTitle>{title}</MobileTitle>
         </TitleWrap>
-        <DescriptionWrapper numbers={numbers} s>
+        <DescriptionWrapper numbers={numbers}>
           <Description>{description}</Description>
         </DescriptionWrapper>
       </ContentContainer>
@@ -114,7 +114,7 @@ const TabletUpTitle = styled.h2`
 
 const DescriptionWrapper = styled.div`
   max-width: ${({ numbers }) => (numbers === 7 ? "445px" : "500px")};
-  margin: ${({ numbers }) => (numbers === 7 ? "0" : "40px auto 0")};
+  margin: ${({ numbers }) => (numbers === 7 ? "0 auto" : "40px auto 0")};
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
     max-width: ${({ numbers }) => (numbers === 7 ? "445px" : "inherit")};
