@@ -1,7 +1,7 @@
 export const theme = {
   breakpoints: {
     tablet: `(min-width: 767px)`,
-    laptop: `(min-width: 1200px)`,
+    laptop: `(min-width: 1280px)`,
     desktop: `(min-width: 1440px)`,
   },
 
