@@ -1,6 +1,16 @@
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import ButtonScoot from "../atoms/ButtonScoot";
 import { useMediaQuery } from "../hooks/useMediaQuery";
+import {
+  titleVariants,
+  buttonVariants,
+  descriptionVariants,
+  arrowVariants,
+  lineVariants,
+} from "../animations/homepage/heroanimations";
 
 const whitecircles =
   process.env.PUBLIC_URL + "/assets/patterns/white-circles.svg";
@@ -14,6 +24,15 @@ const rightarrow = process.env.PUBLIC_URL + "/assets/patterns/right-arrow.svg";
 const line = process.env.PUBLIC_URL + "/assets/patterns/line.svg";
 
 function HomeHero() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
@@ -32,25 +51,50 @@ function HomeHero() {
         />
       </ImageWrapper>
       <HeroContent>
-        <TitleWrap>
+        <TitleWrap
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={titleVariants}
+        >
           <TabletTitle>Scooter Sharing Made Simple</TabletTitle>
           <MobileTitle>Scooter sharing made simple</MobileTitle>
         </TitleWrap>
-        <DescriptionWrap>
+        <DescriptionWrap
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={descriptionVariants}
+        >
           <Description>
             Scoot takes the hassle out of urban mobility. Our bikes are placed
             in convenient locations in each of our cities. Use our app to locate
             the nearest bike, unlock it with a tap, and you&#39;re away!
           </Description>
         </DescriptionWrap>
-        <ButtonWrapper>
+        <ButtonWrapper
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={buttonVariants}
+        >
           <ButtonScoot word="get scootin" />
         </ButtonWrapper>
       </HeroContent>
-      <LineWrap>
+      <LineWrap
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={lineVariants}
+      >
         <Line src={line} alt="line" />
       </LineWrap>
-      <ArrowWrap>
+      <ArrowWrap
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={arrowVariants}
+      >
         <RightArrow src={rightarrow} alt="right-arrow" />
       </ArrowWrap>
       <WhiteCirclesWrapper>
@@ -76,7 +120,7 @@ const HomeHeroWrapper = styled.section`
   }
 `;
 
-const HeroContent = styled.div`
+const HeroContent = styled(motion.div)`
   margin: 115px 32px 115px;
   height: 356px;
   text-align: center;
@@ -116,7 +160,7 @@ const HeroImage = styled.img`
   height: auto;
 `;
 
-const TitleWrap = styled.div`
+const TitleWrap = styled(motion.div)`
   height: 120px;
   padding-bottom: 24px;
 `;
@@ -138,7 +182,7 @@ const MobileTitle = styled.h3`
   }
 `;
 
-const DescriptionWrap = styled.div`
+const DescriptionWrap = styled(motion.div)`
   margin: 24px auto 34px;
   max-width: 340px;
 
@@ -155,13 +199,13 @@ const DescriptionWrap = styled.div`
 
 const Description = styled.p``;
 
-const ButtonWrapper = styled.div`
+const ButtonWrapper = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-left: 57px;
   }
 `;
 
-const ArrowWrap = styled.div`
+const ArrowWrap = styled(motion.div)`
   overflow: hidden;
   position: absolute;
   top: 478px;
@@ -186,7 +230,7 @@ const ArrowWrap = styled.div`
 const RightArrow = styled.img`
   max-width: 100%;
 `;
-const LineWrap = styled.div`
+const LineWrap = styled(motion.div)`
   display: none;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {

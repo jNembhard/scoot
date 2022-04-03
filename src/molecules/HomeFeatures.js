@@ -1,16 +1,61 @@
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  imageVariants,
+  lineVariants,
+  titleVariants,
+  descriptionVariants,
+} from "../animations/homepage/homefeaturesanimations";
 import styled from "styled-components";
+
 const line = process.env.PUBLIC_URL + "/assets/patterns/line.svg";
 
 export default function HomeFeatures({ icon, title, description }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <FeaturesWrapper>
-      <ImageWrapper>
+      <ImageWrapper
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={imageVariants}
+      >
         <FeaturesImage src={icon} alt={title} />
-        <Line src={line} alt="line" />
+        <Line
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={lineVariants}
+          src={line}
+          alt="line"
+        />
       </ImageWrapper>
       <ContentWrapper>
-        <SmallTitle>{title}</SmallTitle>
-        <Description>{description}</Description>
+        <SmallTitle
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={titleVariants}
+        >
+          {title}
+        </SmallTitle>
+        <Description
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={descriptionVariants}
+        >
+          {description}
+        </Description>
       </ContentWrapper>
     </FeaturesWrapper>
   );
@@ -35,7 +80,7 @@ const FeaturesWrapper = styled.div`
   }
 `;
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.div)`
   width: 56px;
   height: 56px;
 
@@ -52,7 +97,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const FeaturesImage = styled.img`
+const FeaturesImage = styled(motion.img)`
   width: 100%;
   height: auto;
 
@@ -64,7 +109,7 @@ const FeaturesImage = styled.img`
   }
 `;
 
-const Line = styled.img`
+const Line = styled(motion.img)`
   display: none;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -78,7 +123,6 @@ const Line = styled.img`
       brightness(108%) contrast(98%);
     filter: invert(66%) sepia(58%) saturate(622%) hue-rotate(348deg)
       brightness(108%) contrast(98%);
-    opacity: 0.2;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
       transform: rotate(0deg);
@@ -98,10 +142,10 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const SmallTitle = styled.h4`
+const SmallTitle = styled(motion.h4)`
   color: ${({ theme }) => theme.colors.darkNavy};
 `;
 
-const Description = styled.p`
+const Description = styled(motion.p)`
   color: ${({ theme }) => theme.colors.dimGrey};
 `;
