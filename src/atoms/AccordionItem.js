@@ -56,6 +56,10 @@ const AccordionItemWrapper = styled.li`
   .rotate {
     transform: rotate(180deg);
   }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.lightYellow};
+  }
 `;
 
 const ButtonWrapper = styled.div`

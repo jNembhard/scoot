@@ -71,7 +71,7 @@ export default function FooterBottom() {
 const FooterBottomWrap = styled.div`
   width: 100%;
   height: 438px;
-  background-color: ${({ theme }) => theme.colors.darkNavy};
+  background-color: ${({ theme }) => theme.colors.darkGrey};
   display: flex;
   align-items: center;
   justify-content: center;

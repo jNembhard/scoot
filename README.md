@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Scoot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
 
-## Available Scripts
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+### The challenge
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Users should be able to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements throughout the site
 
-### `npm test`
+### Screenshot
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Scoot Photo](./public/assets/scoot-screenshot.png)
 
-### `npm run build`
+### Links
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Solution URL: [GitHub](https://github.com/jNembhard/scoot)
+- Live Site URL: [Scoot](https://scoot-pi.vercel.app)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## My process
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Built with
 
-### `npm run eject`
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### What I learned
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I had been building projects primarily with Gatsby JS and Next JS and decided this would be a good time to build something with a pure React library. Shouldn't be too hard right?
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+It seems the method for accessing the react-router had changed drastically since I had last used built a pure react project a month or two ago from the start date of this build. I much prefer this newer method of accessing the react router. Instead of binding the master components to the App.js page, I can create the routes at the index. I find this cleaner to read and I can use the App page as a "Home page" which reduces the amount of pages needed for the final build overall.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Depending on the implementation you use, this can turn out to be fairly complex or fairly easy depending on what implementation methods you decided to use. I chose Styled Components and could implement ternary operators similar to the example below:
 
-## Learn More
+```css
+flex-direction: ${({ numbers }) =>
+        numbers === 2 ? "row" : numbers === 5 ? "row" : "row-reverse"};
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This was primarily for arrow and description wrappers. I could also use this method to control absoulte positioning of arrows similar to this example:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```css
+right: ${({ numbers }) =>
+      numbers === 1
+        ? "-370px"
+        : numbers === 3
+        ? "-370px"
+        : numbers === 4
+        ? "-370px"
+        : numbers === 6
+        ? "-370px"
+        : "inherit"};
+```
 
-### Code Splitting
+If you want to see some of the hooks I used to control image switching and preventing scrolling when the side nav bar is open, check out the hooks folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Continued development
 
-### Analyzing the Bundle Size
+For future projects, I'd like to focus on using TypeScript. Statically typed languages can help to avoid errors and better communicate my intentions with implementation to other developers. I also will gain a better understanding on a project to project basis whether it's best to use a TS or JS solution.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Author
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Website - [Jason Nembhard](https://www.jasonnembhard.com)

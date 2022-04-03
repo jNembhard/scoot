@@ -37,7 +37,7 @@ export default function FooterTop({ title }) {
 
 const FooterTopWrap = styled.div`
   position: relative;
-  background-color: ${({ theme }) => theme.colors.dimGrey};
+  background-color: ${({ theme }) => theme.colors.darkNavy};
   height: 320px;
   overflow: hidden;
 
@@ -48,11 +48,22 @@ const FooterTopWrap = styled.div`
 
 const BackdropContainer = styled.div`
   position: absolute;
-  backgrond-color: ${({ theme }) => theme.colors.dimNavy};
+  backgrond-color: ${({ theme }) => theme.colors.dimGrey};
   z-index: 0;
   top: 187px;
   left: -600px;
   right: 10px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    top: 140px;
+    left: -390px;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      top: 140px;
+      left: unset;
+      right: -100px;
+    }
+  }
 `;
 
 const Backdrop = styled.img``;
