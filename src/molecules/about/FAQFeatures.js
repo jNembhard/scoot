@@ -1,11 +1,27 @@
-import AccordionItem from "../../atoms/AccordionItem";
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { faqs } from "../../data/faqs";
+import AccordionItem from "../../atoms/AccordionItem";
 import styled from "styled-components";
 
 export default function FAQFeatures({ subtitle, faqstart, faqend }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
     <FAQFeaturesWrapper>
-      <SubTitleWrap>
+      <SubTitleWrap
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={titleVariants}
+      >
         <SubTitleTablet>{subtitle}</SubTitleTablet>
         <SubTitleMobile>{subtitle}</SubTitleMobile>
       </SubTitleWrap>
@@ -23,6 +39,15 @@ export default function FAQFeatures({ subtitle, faqstart, faqend }) {
   );
 }
 
+const titleVariants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.2 },
+  },
+  hidden: { opacity: 0 },
+};
+
 const FAQFeaturesWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,7 +58,7 @@ const FAQFeaturesWrapper = styled.div`
   }
 `;
 
-const SubTitleWrap = styled.div`
+const SubTitleWrap = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.laptop} {
     width: 350px;
     height: 48px;

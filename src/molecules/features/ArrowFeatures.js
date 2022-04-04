@@ -1,3 +1,11 @@
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  imageVariants,
+  arrowLeftVariants,
+  arrowRightVariants,
+} from "../../animations/homepage/arrows";
 import styled from "styled-components";
 import Features from "./Features";
 
@@ -10,14 +18,37 @@ export default function ArrowFeatures({
   description,
   numbers,
 }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <ArrowFeaturesWrapper numbers={numbers}>
       {numbers < 7 && (
         <div>
-          <ImageWrapper>
+          <ImageWrapper
+            ref={ref}
+            animate={controls}
+            initial="hidden"
+            variants={imageVariants}
+          >
             <Image src={image} alt={title} />
           </ImageWrapper>
-          <ArrowImageWrapper numbers={numbers}>
+          <ArrowImageWrapper
+            numbers={numbers}
+            animate={controls}
+            initial="hidden"
+            variants={
+              numbers === 2 || numbers === 5
+                ? arrowRightVariants
+                : arrowLeftVariants
+            }
+          >
             <ArrowImage src={arrowimage} alt="arrow" />
           </ArrowImageWrapper>
           <CircleImageWrapper numbers={numbers}>
@@ -48,7 +79,7 @@ const ArrowFeaturesWrapper = styled.div`
   }
 `;
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.div)`
   overflow: hidden;
 `;
 
@@ -121,7 +152,7 @@ const CircleImageWrapper = styled.div`
 
 const CircleImage = styled.img``;
 
-const ArrowImageWrapper = styled.div`
+const ArrowImageWrapper = styled(motion.div)`
   position: absolute;
   top: ${({ numbers }) =>
     numbers === 1

@@ -1,22 +1,56 @@
-import React from "react";
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  imageVariants,
+  numberVariants,
+  titleVariants,
+  descriptionVariants,
+} from "../../animations/aboutpage/values";
 import styled from "styled-components";
 
 export default function ValueFeatures({ image, title, description, number }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <ValueFeaturesWrapper>
       <ImageWrapper>
-        <ValueImageContainer>
+        <ValueImageContainer
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={imageVariants}
+        >
           <ValueImage src={image} alt={title} />
         </ValueImageContainer>
-        <NumberWrapper>
+        <NumberWrapper
+          animate={controls}
+          initial="hidden"
+          variants={numberVariants}
+        >
           <Number>0{number}</Number>
         </NumberWrapper>
       </ImageWrapper>
       <ValueContent>
-        <TitleWrapper>
+        <TitleWrapper
+          animate={controls}
+          initial="hidden"
+          variants={titleVariants}
+        >
           <Title>{title}</Title>
         </TitleWrapper>
-        <DescriptionWrapper>
+        <DescriptionWrapper
+          animate={controls}
+          initial="hidden"
+          variants={descriptionVariants}
+        >
           <Description>{description}</Description>
         </DescriptionWrapper>
       </ValueContent>
@@ -44,7 +78,7 @@ const ImageWrapper = styled.div`
   min-width: 311px;
 `;
 
-const ValueImageContainer = styled.div`
+const ValueImageContainer = styled(motion.div)`
   overflow: hidden;
   position: absolute;
   z-index: 1;
@@ -59,7 +93,7 @@ const ValueImage = styled.img`
   height: auto;
 `;
 
-const NumberWrapper = styled.div`
+const NumberWrapper = styled(motion.div)`
   position: absolute;
   background-color: transparent;
   top: 192px;
@@ -79,7 +113,7 @@ const ValueContent = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const TitleWrapper = styled.div`
+const TitleWrapper = styled(motion.div)`
   text-align: center;
 `;
 const Title = styled.h4`
@@ -87,7 +121,7 @@ const Title = styled.h4`
   color: ${({ theme }) => theme.colors.darkNavy};
 `;
 
-const DescriptionWrapper = styled.div`
+const DescriptionWrapper = styled(motion.div)`
   text-align: center;
   max-width: 500px;
 

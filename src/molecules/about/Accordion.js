@@ -1,11 +1,37 @@
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import FAQFeatures from "./FAQFeatures";
 import styled from "styled-components";
 
+const titleVariants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.2 },
+  },
+  hidden: { opacity: 0 },
+};
+
 export default function Accordion() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <AccordionWrapper>
       <FAQContent>
-        <TitleWrap>
+        <TitleWrap
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={titleVariants}
+        >
           <Title>FAQs</Title>
         </TitleWrap>
       </FAQContent>
@@ -27,7 +53,7 @@ const AccordionWrapper = styled.div`
   }
 `;
 const FAQContent = styled.div``;
-const TitleWrap = styled.div`
+const TitleWrap = styled(motion.div)`
   text-align: center;
 `;
 const Title = styled.h3`

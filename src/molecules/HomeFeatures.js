@@ -6,7 +6,7 @@ import {
   lineVariants,
   titleVariants,
   descriptionVariants,
-} from "../animations/homepage/homefeaturesanimations";
+} from "../animations/homepage/homefeatures";
 import styled from "styled-components";
 
 const line = process.env.PUBLIC_URL + "/assets/patterns/line.svg";
@@ -31,7 +31,6 @@ export default function HomeFeatures({ icon, title, description }) {
       >
         <FeaturesImage src={icon} alt={title} />
         <Line
-          ref={ref}
           animate={controls}
           initial="hidden"
           variants={lineVariants}
@@ -41,7 +40,6 @@ export default function HomeFeatures({ icon, title, description }) {
       </ImageWrapper>
       <ContentWrapper>
         <SmallTitle
-          ref={ref}
           animate={controls}
           initial="hidden"
           variants={titleVariants}
@@ -49,7 +47,6 @@ export default function HomeFeatures({ icon, title, description }) {
           {title}
         </SmallTitle>
         <Description
-          ref={ref}
           animate={controls}
           initial="hidden"
           variants={descriptionVariants}

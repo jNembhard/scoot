@@ -6,6 +6,7 @@ const imageVariants = {
   },
   hidden: { opacity: 0, y: 100 },
 };
+
 const lineVariants = {
   visible: {
     opacity: 0.2,

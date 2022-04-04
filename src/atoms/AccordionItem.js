@@ -75,12 +75,13 @@ const AccordionButton = styled.button`
   line-height: 24px;
   letter-spacing: -0.8px;
   color: ${({ theme }) => theme.colors.darkNavy};
-  width: 100%;
   cursor: pointer;
   padding: 16px 10px;
   border: none;
+  max-width: 340px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
+    max-width: unset;
     height: 92px;
     width: 689px;
     font-size: 24px;

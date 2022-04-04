@@ -1,12 +1,29 @@
-import React from "react";
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { titleVariants } from "../../animations/aboutpage/values";
 import styled from "styled-components";
 import ValueFeatures from "../features/ValueFeatures";
 import { valuefeatures } from "../../data/valuefeatures";
 
 function Value({ valuetitle }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <ValueWrapper>
-      <TitleWrapper>
+      <TitleWrapper
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={titleVariants}
+      >
         <TabletTitle>{valuetitle}</TabletTitle>
         <MobileTitle>{valuetitle}</MobileTitle>
       </TitleWrapper>
@@ -48,7 +65,7 @@ const ValueFeaturesWrapper = styled.div`
   }
 `;
 
-const TitleWrapper = styled.div`
+const TitleWrapper = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin-bottom: 50px;
   }

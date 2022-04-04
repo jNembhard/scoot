@@ -10,7 +10,7 @@ import {
   descriptionVariants,
   arrowVariants,
   lineVariants,
-} from "../animations/homepage/heroanimations";
+} from "../animations/homepage/hero";
 
 const whitecircles =
   process.env.PUBLIC_URL + "/assets/patterns/white-circles.svg";

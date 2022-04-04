@@ -1,20 +1,52 @@
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  titleVariants,
+  descriptionVariants,
+  buttonVariants,
+} from "../../animations/homepage/features";
 import styled from "styled-components";
 import ButtonScoot from "../../atoms/ButtonScoot";
 
 export default function Features({ title, description, numbers }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <FeaturesWrapper numbers={numbers}>
       <ContentContainer numbers={numbers}>
-        <TitleWrap>
+        <TitleWrap
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={titleVariants}
+        >
           <TabletUpTitle>{title}</TabletUpTitle>
           <MobileTitle>{title}</MobileTitle>
         </TitleWrap>
-        <DescriptionWrapper numbers={numbers}>
+        <DescriptionWrapper
+          numbers={numbers}
+          animate={controls}
+          initial="hidden"
+          variants={descriptionVariants}
+        >
           <Description>{description}</Description>
         </DescriptionWrapper>
       </ContentContainer>
       {(numbers < 4 || numbers > 5) && (
-        <ButtonWrapper numbers={numbers}>
+        <ButtonWrapper
+          numbers={numbers}
+          animate={controls}
+          initial="hidden"
+          variants={buttonVariants}
+        >
           <ButtonScoot
             word={
               numbers === 6
@@ -78,7 +110,7 @@ const ContentContainer = styled.div`
   }
 `;
 
-const TitleWrap = styled.div`
+const TitleWrap = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 32px;
 
@@ -112,7 +144,7 @@ const TabletUpTitle = styled.h2`
   }
 `;
 
-const DescriptionWrapper = styled.div`
+const DescriptionWrapper = styled(motion.div)`
   max-width: ${({ numbers }) => (numbers === 7 ? "445px" : "500px")};
   margin: ${({ numbers }) => (numbers === 7 ? "0 auto" : "40px auto 0")};
 
@@ -124,7 +156,7 @@ const DescriptionWrapper = styled.div`
 
 const Description = styled.p``;
 
-const ButtonWrapper = styled.div`
+const ButtonWrapper = styled(motion.div)`
   margin: 0;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {

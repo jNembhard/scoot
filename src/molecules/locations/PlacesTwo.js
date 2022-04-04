@@ -1,11 +1,29 @@
-import styled from "styled-components";
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { locations } from "../../data/locations";
+import styled from "styled-components";
 
 export default function PlacesTwo() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <PlacesWrapper>
-      {locations.map((location) => (
-        <TitleWrapper>
+      {locations.map((location, i) => (
+        <TitleWrapper
+          ref={ref}
+          custom={i}
+          animate={controls}
+          initial="hidden"
+          variants={triangleVariants}
+        >
           <TitleContainer
             key={location.id}
             id={location.id}
@@ -20,6 +38,15 @@ export default function PlacesTwo() {
   );
 }
 
+const triangleVariants = {
+  visible: (i) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { delay: i * 0.3, duration: 0.4 },
+  }),
+  hidden: { opacity: 0, scale: 0 },
+};
+
 const PlacesWrapper = styled.div`
   display: none;
 
@@ -33,8 +60,8 @@ const PlacesWrapper = styled.div`
   }
 `;
 
-const TitleWrapper = styled.div``;
-const TitleContainer = styled.div`
+const TitleWrapper = styled(motion.div)``;
+const TitleContainer = styled(motion.div)`
   display: inline-flex;
   position: absolute;
   align-items: center;
