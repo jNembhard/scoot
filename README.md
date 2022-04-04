@@ -68,6 +68,21 @@ right: ${({ numbers }) =>
         : "inherit"};
 ```
 
+I also decided to play around with the animations a bit to make the pages more lively. I needed to be able to control when the animations would start based on the scroll position. Creating this set of code:
+
+```js
+const controls = useAnimation();
+const [ref, inView] = useInView();
+
+useEffect(() => {
+  if (inView) {
+    controls.start("visible");
+  }
+}, [controls, inView]);
+```
+
+seemed to do the trick. Basically, the Framer motion library along with the react-intersection-behavior is used to create a reference point that activates the defined "visible" animation when that position is reached on the page.
+
 If you want to see some of the hooks I used to control image switching and preventing scrolling when the side nav bar is open, check out the hooks folder.
 
 ### Continued development

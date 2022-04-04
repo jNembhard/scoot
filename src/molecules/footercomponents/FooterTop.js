@@ -1,4 +1,6 @@
-import React from "react";
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 
 const semicircles =
@@ -13,19 +15,38 @@ const appstores = [
 ];
 
 export default function FooterTop({ title }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
     <FooterTopWrap>
       <BackdropContainer>
         <Backdrop src={semicircles} alt="" />
       </BackdropContainer>
       <TopContainer>
-        <CTAWrap>
+        <CTAWrap
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={titleVariants}
+        >
           <CTATablet>{title}</CTATablet>
           <CTAMobile>{title}</CTAMobile>
         </CTAWrap>
         <AppStoreWrap>
           {appstores.map(({ name, store }, index) => (
-            <AppImageWrapper key={index}>
+            <AppImageWrapper
+              key={index}
+              custom={index}
+              animate={controls}
+              initial="hidden"
+              variants={appVariants}
+            >
               <AppImage appstore={name} src={store} alt={name} />
             </AppImageWrapper>
           ))}
@@ -34,6 +55,24 @@ export default function FooterTop({ title }) {
     </FooterTopWrap>
   );
 }
+
+const titleVariants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4 },
+  },
+  hidden: { opacity: 0, y: -100 },
+};
+
+const appVariants = {
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: index * 0.3, duration: 0.4 },
+  }),
+  hidden: { opacity: 0, y: -100 },
+};
 
 const FooterTopWrap = styled.div`
   position: relative;
@@ -88,7 +127,7 @@ const TopContainer = styled.div`
     justify-content: space-between;
   }
 `;
-const CTAWrap = styled.div`
+const CTAWrap = styled(motion.div)`
   padding-top: 32px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -134,7 +173,7 @@ const AppStoreWrap = styled.div`
   }
 `;
 
-const AppImageWrapper = styled.div`
+const AppImageWrapper = styled(motion.div)`
   margin: 0 6px;
 `;
 
