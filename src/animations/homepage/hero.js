@@ -29,7 +29,7 @@ const arrowVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.2, delay: 0.7 },
+    transition: { duration: 0.2, delay: 0.5 },
   },
   hidden: { opacity: 0, x: -50 },
 };
@@ -37,7 +37,7 @@ const arrowVariants = {
 const lineVariants = {
   visible: {
     opacity: 1,
-    transition: { duration: 0.2, delay: 0.8 },
+    transition: { duration: 0.2, delay: 0.5 },
   },
   hidden: { opacity: 0 },
 };
