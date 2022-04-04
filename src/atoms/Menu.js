@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";
 const navLinks = [
   { name: "about", url: "/about" },
@@ -23,9 +24,12 @@ export default function Menu() {
           </li>
         ))}
       </MenuLinks>
-      <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
+      <HashLink
+        style={{ textDecoration: "none", color: "inherit" }}
+        to="#signup"
+      >
         <Button>get scootin</Button>
-      </Link>
+      </HashLink>
     </MenuWrapper>
   );
 }

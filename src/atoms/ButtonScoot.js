@@ -1,8 +1,21 @@
-import React from "react";
+import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";
 
 export default function ButtonScoot({ word }) {
-  return <Button>{word}</Button>;
+  return (
+    <HashLink
+      style={{ color: "inherit", textDecoration: "none" }}
+      to={
+        word === "learn more"
+          ? "/about"
+          : word === "get scootin"
+          ? "/#signup"
+          : "/"
+      }
+    >
+      <Button>{word}</Button>
+    </HashLink>
+  );
 }
 
 const Button = styled.button`

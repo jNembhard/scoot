@@ -28,7 +28,7 @@ export default function FooterTop({ title }) {
       <BackdropContainer>
         <Backdrop src={semicircles} alt="" />
       </BackdropContainer>
-      <TopContainer>
+      <TopContainer id="signup">
         <CTAWrap
           ref={ref}
           animate={controls}

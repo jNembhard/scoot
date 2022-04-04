@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import useScrollBlock from "../hooks/useScrollBlock";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";
 
 const closeIcon = process.env.PUBLIC_URL + "/assets/icons/close.svg";
@@ -53,9 +54,12 @@ function BurgerNav() {
             </LinkList>
           ))}
         </UL>
-        <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
-          <Button>get scootin</Button>
-        </Link>
+        <HashLink
+          style={{ textDecoration: "none", color: "inherit" }}
+          to="#signup"
+        >
+          <Button onClick={() => toggle()}>get scootin</Button>
+        </HashLink>
       </SidebarContainer>
     </BurgerWrap>
   );
@@ -113,4 +117,5 @@ const Button = styled.button`
   width: 192px;
   height: 53px;
   border: 0;
+  cursor: pointer;
 `;
