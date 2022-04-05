@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
-import WorldMap from "../atoms/location/WorldMap";
-import Places from "../molecules/locations/Places";
-import FullArrow from "../organisms/FullArrow";
-import SmallHeroFull from "../organisms/SmallHeroFull";
+import WorldMap from "../components/atoms/location/WorldMap";
+import Places from "../components/molecules/locations/Places";
+import FullArrow from "../components/organisms/FullArrow";
+import SmallHeroFull from "../components/organisms/SmallHeroFull";
 
 export default function Locations() {
   return (

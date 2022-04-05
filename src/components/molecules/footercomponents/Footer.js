@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import FooterBottom from "./FooterBottom";
 import FooterTop from "./FooterTop";

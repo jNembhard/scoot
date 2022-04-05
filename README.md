@@ -34,6 +34,7 @@ Users should be able to:
 
 ### Built with
 
+- Atomic Design
 - Flexbox
 - Mobile-first workflow
 - [Framer Motion](https://www.framer.com/)

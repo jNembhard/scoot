@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
-import HomeFeatures from "./molecules/HomeFeatures";
-import HomeHero from "./organisms/HomeHero";
+import HomeFeatures from "./components/molecules/HomeFeatures";
+import HomeHero from "./components/organisms/HomeHero";
 import { homefeatures } from "./data/homedata/homefeatures";
-import FullArrow from "./organisms/FullArrow";
+import FullArrow from "./components/organisms/FullArrow";
 
 function App() {
   return (

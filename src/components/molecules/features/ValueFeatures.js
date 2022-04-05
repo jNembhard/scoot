@@ -6,7 +6,7 @@ import {
   numberVariants,
   titleVariants,
   descriptionVariants,
-} from "../../animations/aboutpage/values";
+} from "../../../animations/aboutpage/values";
 import styled from "styled-components";
 
 export default function ValueFeatures({ image, title, description, number }) {

@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
-import Value from "../molecules/about/Value.js";
-import FullArrow from "../organisms/FullArrow.js";
-import JobsFull from "../organisms/JobsFull.js";
-import SmallHeroFull from "../organisms/SmallHeroFull.js";
+import Value from "../components/molecules/about/Value.js";
+import FullArrow from "../components/organisms/FullArrow.js";
+import JobsFull from "../components/organisms/JobsFull.js";
+import SmallHeroFull from "../components/organisms/SmallHeroFull.js";
 
 export default function Careers() {
   return (

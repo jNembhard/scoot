@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import useScrollBlock from "../hooks/useScrollBlock";
-import { useOnClickOutside } from "../hooks/useOnClickOutside";
+import useScrollBlock from "../../hooks/useScrollBlock";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { faqs } from "../../data/faqs";
+import { faqs } from "../../../data/faqs";
 import AccordionItem from "../../atoms/AccordionItem";
 import styled from "styled-components";
 

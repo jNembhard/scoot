@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useMediaQuery } from "../../../hooks/useMediaQuery";
 import PlacesTwo from "../../molecules/locations/PlacesTwo";
 
 const mobilemap =

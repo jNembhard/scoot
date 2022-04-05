@@ -3,14 +3,14 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import ButtonScoot from "../atoms/ButtonScoot";
-import { useMediaQuery } from "../hooks/useMediaQuery";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import {
   titleVariants,
   buttonVariants,
   descriptionVariants,
   arrowVariants,
   lineVariants,
-} from "../animations/homepage/hero";
+} from "../../animations/homepage/hero";
 
 const whitecircles =
   process.env.PUBLIC_URL + "/assets/patterns/white-circles.svg";

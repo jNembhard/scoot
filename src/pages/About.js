@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
-import Value from "../molecules/about/Value";
-import Accordion from "../molecules/about/Accordion";
-import FullArrow from "../organisms/FullArrow";
-import SmallHeroFull from "../organisms/SmallHeroFull";
+import Value from "../components/molecules/about/Value";
+import Accordion from "../components/molecules/about/Accordion";
+import FullArrow from "../components/organisms/FullArrow";
+import SmallHeroFull from "../components/organisms/SmallHeroFull";
 
 export default function About() {
   return (

@@ -6,7 +6,7 @@ import {
   lineVariants,
   titleVariants,
   descriptionVariants,
-} from "../animations/homepage/homefeatures";
+} from "../../animations/homepage/homefeatures";
 import styled from "styled-components";
 
 const line = process.env.PUBLIC_URL + "/assets/patterns/line.svg";

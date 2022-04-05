@@ -5,7 +5,7 @@ import {
   titleVariants,
   descriptionVariants,
   buttonVariants,
-} from "../../animations/homepage/features";
+} from "../../../animations/homepage/features";
 import styled from "styled-components";
 import ButtonScoot from "../../atoms/ButtonScoot";
 

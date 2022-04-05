@@ -3,7 +3,7 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import Jobs from "../molecules/Jobs";
-import { jobs } from "../data/jobs";
+import { jobs } from "../../data/jobs";
 
 export default function JobsFull() {
   const controls = useAnimation();

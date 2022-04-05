@@ -5,7 +5,7 @@ import {
   imageVariants,
   arrowLeftVariants,
   arrowRightVariants,
-} from "../../animations/homepage/arrows";
+} from "../../../animations/homepage/arrows";
 import styled from "styled-components";
 import Features from "./Features";
 

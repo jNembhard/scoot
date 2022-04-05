@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { titleVariants } from "../../animations/aboutpage/values";
+import { titleVariants } from "../../../animations/aboutpage/values";
 import styled from "styled-components";
 import ValueFeatures from "../features/ValueFeatures";
-import { valuefeatures } from "../../data/valuefeatures";
+import { valuefeatures } from "../../../data/valuefeatures";
 
 function Value({ valuetitle }) {
   const controls = useAnimation();

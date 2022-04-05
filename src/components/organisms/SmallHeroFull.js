@@ -1,5 +1,5 @@
-import { herodata } from "../data/herodata.js";
-import { useMediaQuery } from "../hooks/useMediaQuery";
+import { herodata } from "../../data/herodata.js";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import SmallHero from "../molecules/about/SmallHero.js";
 import styled from "styled-components";
 

@@ -1,4 +1,4 @@
-import { arrowfeatures } from "../data/homedata/arrowfeatures.js";
+import { arrowfeatures } from "../../data/homedata/arrowfeatures.js";
 import styled from "styled-components";
 import ArrowFeatures from "../molecules/features/ArrowFeatures.js";
 

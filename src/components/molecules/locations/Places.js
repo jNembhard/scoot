@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { locations } from "../../data/locations";
+import { locations } from "../../../data/locations";
 import styled from "styled-components";
 
 export default function Places() {
