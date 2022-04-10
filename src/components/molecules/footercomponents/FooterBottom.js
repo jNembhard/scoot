@@ -68,7 +68,7 @@ export default function FooterBottom() {
 }
 
 const FooterBottomWrap = styled.div`
-  /* width: 100%; */
+  width: 100%;
   height: 438px;
   background-color: ${({ theme }) => theme.colors.darkGrey};
   display: flex;
@@ -79,7 +79,7 @@ const FooterBottomWrap = styled.div`
     height: 96px;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      /* height: 100%; */
+      height: 76px;
     }
   }
 `;
@@ -93,6 +93,10 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: center;
     width: 100%;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      max-height: 76px;
+    }
   }
 `;
 
@@ -105,6 +109,10 @@ const LogoContainer = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 39px 0 0;
     height: 96px;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      height: 76px;
+    }
   }
   h3 {
     color: ${({ theme }) => theme.colors.snow};
@@ -125,6 +133,11 @@ const NavContainer = styled.div`
     width: 249px;
     height: 96px;
     margin: 36px 0;
+
+    @media ${({ theme }) => theme.breakpoints.tablet} {
+      height: 72px;
+      margin: 35px 0 32px;
+    }
   }
 `;
 

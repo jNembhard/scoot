@@ -17,7 +17,7 @@ const FooterWrap = styled.section`
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
       overflow-y: hidden;
-      max-height: 346px;
+      max-height: 327px;
     }
   }
 `;
