@@ -169,7 +169,7 @@ const AppStoreWrap = styled.div`
   margin-bottom: 88px;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
-    margin-bottom: unset;
+    margin-bottom: -40px;
   }
 `;
 
