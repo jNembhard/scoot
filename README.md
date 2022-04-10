@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/jNembhard/scoot)
-- Live Site URL: [Scoot](https://scoot-pi.vercel.app)
+- Live Site URL: [Scoot](https://getscootin.vercel.app)
 
 ## My process
 
