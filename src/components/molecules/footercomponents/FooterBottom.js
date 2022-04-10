@@ -68,7 +68,7 @@ export default function FooterBottom() {
 }
 
 const FooterBottomWrap = styled.div`
-  width: 100%;
+  /* width: 100%; */
   height: 438px;
   background-color: ${({ theme }) => theme.colors.darkGrey};
   display: flex;
@@ -77,6 +77,10 @@ const FooterBottomWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 96px;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      /* height: 100%; */
+    }
   }
 `;
 
