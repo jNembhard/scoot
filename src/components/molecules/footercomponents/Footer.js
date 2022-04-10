@@ -14,6 +14,10 @@ export default function Footer() {
 const FooterWrap = styled.section`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     overflow-y: hidden;
-    max-height: 346px;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      overflow-y: hidden;
+      max-height: 346px;
+    }
   }
 `;
