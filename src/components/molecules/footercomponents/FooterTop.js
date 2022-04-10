@@ -24,11 +24,11 @@ export default function FooterTop({ title }) {
     }
   }, [controls, inView]);
   return (
-    <FooterTopWrap>
+    <FooterTopWrap id="signup">
       <BackdropContainer>
         <Backdrop src={semicircles} alt="" />
       </BackdropContainer>
-      <TopContainer id="signup">
+      <TopContainer>
         <CTAWrap
           ref={ref}
           animate={controls}

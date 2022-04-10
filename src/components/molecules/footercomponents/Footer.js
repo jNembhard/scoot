@@ -11,13 +11,8 @@ export default function Footer() {
   );
 }
 
-const FooterWrap = styled.section`
+const FooterWrap = styled.footer`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     overflow-y: hidden;
-
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      overflow-y: hidden;
-      max-height: 327px;
-    }
   }
 `;

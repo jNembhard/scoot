@@ -19,7 +19,7 @@ export default function Header() {
   );
 }
 
-const NavHeader = styled.section`
+const NavHeader = styled.header`
   padding: 23px 33px 23px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {

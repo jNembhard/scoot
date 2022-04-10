@@ -114,6 +114,7 @@ const LogoContainer = styled.div`
       height: 76px;
     }
   }
+
   h3 {
     color: ${({ theme }) => theme.colors.snow};
   }
