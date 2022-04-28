@@ -45,7 +45,7 @@ Users should be able to:
 
 I had been building projects primarily with Gatsby JS and Next JS and decided this would be a good time to build something with a pure React library. Shouldn't be too hard right?
 
-It seems the method for accessing the react-router had changed drastically since I had last used built a pure react project a month or two ago from the start date of this build. I much prefer this newer method of accessing the react router. Instead of binding the master components to the App.js page, I can create the routes at the index. I find this cleaner to read and I can use the App page as a "Home page" which reduces the amount of pages needed for the final build overall.
+It seems the method for accessing the react-router had changed drastically since I had last built a pure react project a month or two ago from the start date of this build. I much prefer this newer method of accessing the react router. Instead of binding the master components to the App.js page, I can create the routes at the index. I find this cleaner to read and I can use the App page as a "Home page" which reduces the amount of pages needed for the final build overall.
 
 Depending on the implementation you use, this can turn out to be fairly complex or fairly easy depending on what implementation methods you decided to use. I chose Styled Components and could implement ternary operators similar to the example below:
 
@@ -69,7 +69,7 @@ right: ${({ numbers }) =>
         : "inherit"};
 ```
 
-I also decided to play around with the animations a bit to make the pages more lively. I needed to be able to control when the animations would start based on the scroll position. Creating this set of code:
+With the coding structure complete, I decided to find a way to make the site a bit more lively with scroll animations. I needed to be able to control when the animations would start based on the scroll position. Creating this snippet of code:
 
 ```js
 const controls = useAnimation();
@@ -82,7 +82,7 @@ useEffect(() => {
 }, [controls, inView]);
 ```
 
-seemed to do the trick. Basically, the Framer motion library along with the react-intersection-behavior is used to create a reference point that activates the defined "visible" animation when that position is reached on the page.
+seemed to do the trick. The Framer motion library along with the react-intersection-behavior is used to create a reference point that activates the defined "visible" animation when that position is reached on the page.
 
 If you want to see some of the hooks I used to control image switching and preventing scrolling when the side nav bar is open, check out the hooks folder.
 
