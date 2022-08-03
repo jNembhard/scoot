@@ -9,7 +9,11 @@ function App() {
   return (
     <AppWrap>
       <Helmet>
-        <title>Scoot | Home</title>
+        <title>Home | Scoot</title>
+        <meta
+          name="description"
+          content="Use our app to locate the nearest bike, unlock it with a tap, and you're away! Let's get scootin'"
+        />
       </Helmet>
       <HomeHero />
       <HomeFeaturesWrap>

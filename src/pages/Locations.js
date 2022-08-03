@@ -8,7 +8,11 @@ export default function Locations() {
   return (
     <div>
       <Helmet>
-        <title>Scoot | Locations</title>
+        <title>Locations | Scoot</title>
+        <meta
+          name="description"
+          content="If you'd like to see Scoot in your hometown, be sure to let us know."
+        />
       </Helmet>
       <SmallHeroFull title="Locations" start={1} end={2} />
       <WorldMap />
