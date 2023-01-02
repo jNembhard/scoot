@@ -11,7 +11,6 @@ export default function Careers() {
         title="Careers"
         description="Check out our openings and support Scoot's mission for better urban living."
         type="webapp"
-        name="Jason Nembhard"
       />
       <SmallHeroFull title="Careers" start={1} end={2} />
       <FullArrow start={5} end={6} />

@@ -11,7 +11,6 @@ export default function About() {
         title="About"
         description="Learn how Scoot provides mobility for the digital era to enhance your urban living experience."
         type="webapp"
-        name="Jason Nembhard"
       />
       <SmallHeroFull title="About" start={0} end={1} />
       <FullArrow start={3} end={5} />

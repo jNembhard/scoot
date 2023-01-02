@@ -12,7 +12,6 @@ function App() {
         title="Home"
         description="Use our app to locate the nearest bike, unlock it with a tap, and you're away! Let's get scootin'"
         type="webapp"
-        name="Jason Nembhard"
       />
       <HomeHero />
       <HomeFeaturesWrap>

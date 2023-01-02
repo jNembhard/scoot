@@ -11,7 +11,6 @@ export default function Locations() {
         title="Locations"
         description="If you'd like to see Scoot in your hometown, be sure to let us know."
         type="webapp"
-        name="Jason Nembhard"
       />
       <SmallHeroFull title="Locations" start={1} end={2} />
       <WorldMap />
