@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { theme } from "./styles/theme";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import About from "./pages/About";
 import Careers from "./pages/Careers";
 import Locations from "./pages/Locations";
@@ -14,20 +15,22 @@ import ScrollToTop from "./components/atoms/ScrollToTop";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ScrollToTop />
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Layout>
-          <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="about" element={<About />} />
-            <Route path="career" element={<Careers />} />
-            <Route path="locations" element={<Locations />} />
-          </Routes>
-        </Layout>
-      </ThemeProvider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <Layout>
+            <Routes>
+              <Route path="/" element={<App />} />
+              <Route path="about" element={<About />} />
+              <Route path="career" element={<Careers />} />
+              <Route path="locations" element={<Locations />} />
+            </Routes>
+          </Layout>
+        </ThemeProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,20 +1,19 @@
-import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import HomeFeatures from "./components/molecules/HomeFeatures";
 import HomeHero from "./components/organisms/HomeHero";
 import { homefeatures } from "./data/homedata/homefeatures";
 import FullArrow from "./components/organisms/FullArrow";
+import { Seo } from "./components/atoms/Seo";
 
 function App() {
   return (
     <AppWrap>
-      <Helmet>
-        <title>Home | Scoot</title>
-        <meta
-          name="description"
-          content="Use our app to locate the nearest bike, unlock it with a tap, and you're away! Let's get scootin'"
-        />
-      </Helmet>
+      <Seo
+        title="Home"
+        description="Use our app to locate the nearest bike, unlock it with a tap, and you're away! Let's get scootin'"
+        type="webapp"
+        name="Jason Nembhard"
+      />
       <HomeHero />
       <HomeFeaturesWrap>
         {homefeatures.map((homefeature) => (
